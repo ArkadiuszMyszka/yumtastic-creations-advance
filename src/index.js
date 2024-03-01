@@ -13,7 +13,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <BrowserRouter basename="/yummy-frontend">
+      <BrowserRouter basename="/yumtastic-creations-advance">
         <GlobalStyles />
         <App />
       </BrowserRouter>

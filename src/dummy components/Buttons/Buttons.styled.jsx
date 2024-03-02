@@ -5,6 +5,7 @@ export const Cancel = styled.button`
     border: 1px ${p => p.theme.colors.textAreaBg};
     border-radius: 6px;
     color: ${p => p.theme.colors.mainTextColor};
+    cursor: pointer;
     font-size: ${p =>p.theme.fontSize.s};
     height: 49px;
     transition-duration: 0.5s;
@@ -33,6 +34,7 @@ export const Logout = styled.button`
     border: 1px ${p => p.theme.colors.greenTextColor};
     border-radius: 6px;
     color: ${p => p.theme.colors.mainTextColor};
+    cursor: pointer;
     font-size: ${p =>p.theme.fontSize.s};
     height: 49px;
     transition-duration: 0.5s;
@@ -61,6 +63,7 @@ export const OtherCategories = styled.button`
     border: 2px solid ${p => p.theme.colors.greenTextColor};
     border-radius: 24px 44px;
     color: ${p => p.theme.colors.yummyColor};
+    cursor: pointer;
     font-size: ${p =>p.theme.fontSize.s};
     height: 46px;
     transition-duration: 0.5s;
@@ -84,6 +87,7 @@ export const SearchBlack = styled.button`
     border: 1px ${p => p.theme.colors.yummyColor};
     border-radius: 24px 44px;
     color: ${p => p.theme.colors.whiteTextColor};
+    cursor: pointer;
     font-size: ${p =>p.theme.fontSize.s};
     height: 52px;
     transition-duration: 0.5s;
@@ -111,6 +115,7 @@ export const SearchGreen = styled.button`
     border: 1px ${p => p.theme.colors.greenTextColor};
     border-radius: 24px 44px;
     color: ${p => p.theme.colors.whiteTextColor};
+    cursor: pointer;
     font-size: ${p =>p.theme.fontSize.s};
     height: 70px;
     transition-duration: 0.5s;
@@ -138,6 +143,7 @@ export const SignIn = styled.button`
     border: 2px solid ${p => p.theme.colors.whiteTextColor};
     border-radius: 24px 44px;
     color: ${p => p.theme.colors.whiteTextColor};
+    cursor: pointer;
     font-size: ${p =>p.theme.fontSize.s};
     height: 45px;
     transition-duration: 0.5s;
@@ -162,6 +168,7 @@ export const Subscribe = styled.button`
     border: 1px ${p => p.theme.colors.greenTextColor};
     border-radius: 6px;
     color: ${p => p.theme.colors.whiteTextColor};
+    cursor: pointer;
     font-size: ${p =>p.theme.fontSize.s};
     height: 38px;
     transition-duration: 0.5s;

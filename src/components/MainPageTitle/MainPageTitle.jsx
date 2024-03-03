@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 import {
   StyledTitle,
   SquareFirst,
   SquareSecond,
   SquareBlack,
   Section,
-} from "./MainPageTitle.Styled.js";
+} from './MainPageTitle.Styled.jsx';
 
 const MainPageTitle = ({ title }) => {
   return (

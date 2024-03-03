@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const StyledTitle = styled.h1`
   color: ${p => p.theme.colors.titleTextColor};
   font-family: Poppins;
-  font-size: ${p => p.theme.fontSize.xl};
+  font-size: ${p => p.theme.fontSizes.xl};
   font-weight: ${p => p.theme.media.semiBold};
   letter-spacing: -0.02em;
   line-height: 28px;
@@ -11,13 +11,13 @@ export const StyledTitle = styled.h1`
   text-align: left;
 
   @media (${p => p.theme.media.tablet}) {
-    font-size: ${p => p.theme.fontSize.xxl};
+    font-size: ${p => p.theme.fontSizes.xxl};
     line-height: 32px;
     margin-left: 32px;
   }
 
-  @media (min-width: 1200px) {
-    font-size: ${p => p.theme.fontSize.sb};
+  @media (${p => p.theme.media.desktop}) {
+    font-size: ${p => p.theme.fontSizes.sb};
     line-height: 44px;
     margin-left: 100px;
   }
@@ -109,7 +109,7 @@ export const SquareBlack = styled.div`
     left: 705px;
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (${p => p.theme.media.desktop}) {
     width: 13px;
     height: 13px;
     top: 250px;

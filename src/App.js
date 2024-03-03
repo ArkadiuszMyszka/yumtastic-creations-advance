@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { useEffect } from 'react'; // dodac lazy
 // import { SharedLayout } from './Layout.jsx'; // do zmiany jak dojdzie plik
 import PrivateRoute from './components/PrivateRoute.jsx';
-import React from 'react';
+import React, { lazy } from 'react';
 import RestrictedRoute from './components/RestrictedRoute.jsx';
 import { Route, Routes } from 'react-router-dom';
 
@@ -21,7 +21,7 @@ import { Route, Routes } from 'react-router-dom';
 // const SearchPage = React.lazy(() => import('pages/Search/Search'));
 // const ShoppingListPage = React.lazy(() => import('pages/ShoppingList'));
 // const SigninPage = lazy(() => import('../pages/Signin'));
-// const WelcomePage = lazy(() => import('../pages/Welcome'));
+const WelcomePage = lazy(() => import('./pages/WelcomePage/WelcomePage.jsx'));
 
 const App = () => {
   const dispatch = useDispatch();
@@ -38,11 +38,7 @@ const App = () => {
       <>
         <Route
           path="/welcome"
-          element={
-            <RestrictedRoute
-            // component={<WelcomePage />}
-            />
-          }
+          element={<RestrictedRoute component={<WelcomePage />} />}
         />
         <Route
           path="/register"

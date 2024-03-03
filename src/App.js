@@ -2,7 +2,7 @@ import { refreshUser } from './redux/auth/authOperations.jsx';
 import useAuth from './hooks/useAuth.jsx';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react'; // dodac lazy
-// import { SharedLayout } from './Layout.jsx'; // do zmiany jak dojdzie plik
+// import SharedLayout from './components/SharedLayout/SharedLayout.jsx'; // do zmiany jak dojdzie plik
 import PrivateRoute from './components/PrivateRoute.jsx';
 import React from 'react';
 import RestrictedRoute from './components/RestrictedRoute.jsx';
@@ -64,7 +64,7 @@ const App = () => {
 
       <Route
         path="/"
-        //   element={<SharedLayout />}
+        // element={<SharedLayout />}
       >
         <Route
           index

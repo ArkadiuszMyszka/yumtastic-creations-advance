@@ -1,5 +1,5 @@
 import React from 'react';
-import { LoaderContainer, StyledInfinitySpin } from './LoaderStyles.jsx';
+import { LoaderContainer, StyledInfinitySpin } from './Loader.styled.jsx';
 
 const Loader = () => {
   return (

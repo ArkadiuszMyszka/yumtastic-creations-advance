@@ -59,7 +59,7 @@ export const theme = {
     bold: 700,
   },
 
-  // font-size: ${p =>p.theme.fontSize.m};
+  // font-size: ${p =>p.theme.fontSizes.m};
   fontSizes: {
     xxs: "8px",
     x: "10px",

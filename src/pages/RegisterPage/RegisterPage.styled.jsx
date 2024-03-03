@@ -1,5 +1,5 @@
-import { NavLink } from 'react-router-dom';
 import styled from "styled-components";
+import { NavLink } from 'react-router-dom';
 import register_rectangle_s from '../../images/RegisterPage/register_rectangle_s.png';
 import register_rectangle_m from '../../images/RegisterPage/register_rectangle_m.png';
 import register_rectangle_l from '../../images/RegisterPage/register_rectangle_l.png';
@@ -63,7 +63,7 @@ export const Container = styled.div`
 }
 `;
 
-export const Link = styled.NavLink`
+export const Link = styled(NavLink)`
     color: ${p => p.theme.colors.whiteTextColor};
     cursor: pointer;
     position: absolute;
@@ -86,6 +86,6 @@ export const Link = styled.NavLink`
 
     @media screen and (${(p) => p.theme.media.desktop}) {
     bottom: 9%;
-    left: 75%;
+    left: 72%;
 }
 `;

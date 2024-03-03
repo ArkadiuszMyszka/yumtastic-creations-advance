@@ -4,17 +4,17 @@ import * as Yup from "yup";
 import input from "../../images/icons/input.svg";
 import privateApi from "../../services/PrivateApi";
 import {
+  Button,
+  ErrorIconStyled,
+  ErrorMessageStyled,
   Header,
+  Form,
+  Icon,
   InputBox,
   Input,
-  Button,
-  Icon,
-  Form,
-  ErrorMessageStyled,
-  PasswordStrength,
-  ErrorIconStyled,
-  WarnIconStyled,
   OkIconStyled,
+  PasswordStrength,
+  WarnIconStyled,
 } from "./AuthForm.styled";
 
 
@@ -130,7 +130,7 @@ export const AuthForm = () => {
             ) : isEmailValid ? (
               <OkIconStyled />
             ) : null}
-            <ErrorMessage name="email" component={ErrorMessageStyled} />
+            <ErrorMessage name="email" component={ErrorMessageStyled}/>
           </InputBox>
           
           <InputBox>
@@ -152,10 +152,10 @@ export const AuthForm = () => {
             />
             {getPasswordIcon(passwordStrength)}
             <ErrorMessage name="password" component={ErrorMessageStyled} />
-          </InputBox>
             <PasswordStrength strength={passwordStrength}>
               {passwordStrength && `Password strength: ${passwordStrength}`}
             </PasswordStrength>
+          </InputBox>
           <Button type="submit">Sign up</Button>
         </Form>
       )}

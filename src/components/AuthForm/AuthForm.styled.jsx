@@ -9,15 +9,14 @@ export const Button = styled.button`
     border-radius: 6px;
     color: ${p => p.theme.colors.whiteTextColor};
     cursor: pointer;
-    font-size: ${p =>p.theme.fontSize.m};
-    height: 6vh;
-    max-height: 45px;
+    font-size: ${p =>p.theme.fontSizes.m};
+    height: 45px;
     line-height: 1.13;
     padding: 0;
     margin: 0 auto;
     margin-top: 25px;
     width: 74vw;
-    max-width: 322px;
+    max-width: 279px;
     transition-duration: 0.5s;
 
     &:focus,
@@ -26,80 +25,64 @@ export const Button = styled.button`
     }
 
     @media screen and (${(p) => p.theme.media.tablet}) {
-    height: 6vh;
-    max-height: 59px;
+    height: 59px;
     margin-top: 20px;
     width: 52vw;
-    max-width: 448px;
+    max-width: 400px;
 }
 
     @media screen and (${(p) => p.theme.media.desktop}) {
-    font-size: ${p =>p.theme.fontSize.xm};
-    height: 8vh;
-    max-height: 59px;
-    width: 32vw;
-    max-width: 450px;
+    font-size: ${p =>p.theme.fontSizes.xm};
+    width: 28vw;
+    max-width: 400px;
 }
 `
 
 export const ErrorIconStyled = styled(Error)`
-    position: relative;
-    top: -38px;
-    right: -290px;
+    position: absolute;
+    top: 12px;
+    left: 85%;
 
     @media screen and (${(p) => p.theme.media.tablet}) {
-    right: -435px;
-}
-
-    @media screen and (${(p) => p.theme.media.desktop}) {
-    top: -45px;
-    right: -88%;
+    top: 22px;
 }
 `;
 
 export const WarnIconStyled = styled(Warning)`
-  position: relative;
-    top: -38px;
-    right: -290px;
+  position: absolute;
+  top: 12px;
+  left: 85%;
 
     @media screen and (${(p) => p.theme.media.tablet}) {
-    right: -435px;
-}
-
-    @media screen and (${(p) => p.theme.media.desktop}) {
-    top: -45px;
-    right: -88%;
+    top: 22px;
 }
 `;
 
 export const OkIconStyled = styled(Ok)`
-  position: relative;
-    top: -38px;
-    right: -290px;
+  position: absolute;
+  top: 12px;
+  left: 85%;
 
     @media screen and (${(p) => p.theme.media.tablet}) {
-    right: -435px;
-}
-
-    @media screen and (${(p) => p.theme.media.desktop}) {
-    top: -45px;
-    right: -88%;
+    top: 22px;
 }
 `;
 
 export const ErrorMessageStyled = styled.div`
+    position: absolute;
     color: #E74A3B;
-    font-family: Poppins;
-    font-size: ${p =>p.theme.fontSize.xs};
+    font-size: ${p =>p.theme.fontSizes.xs};
     margin-left: 10px;
+    margin-top: 45px;
 
 
     @media screen and (${(p) => p.theme.media.tablet}) {
-    margin-left: 25px;
+    margin-left: 35px;
+    margin-top: 60px;
 }
 
     @media screen and (${(p) => p.theme.media.desktop}) {
-    margin-left: 20px;
+    margin-left: 30px;
 }
 `;
 
@@ -134,7 +117,7 @@ export const Form = styled.form`
 `;
 
 export const Header = styled.h3`
-    font-size: ${p =>p.theme.fontSize.l};
+    font-size: ${p =>p.theme.fontSizes.l};
     font-weight: 600;
     letter-spacing: -2%;
     line-height: 1.17;
@@ -143,15 +126,15 @@ export const Header = styled.h3`
     margin-top: 0;
 
     @media screen and (${(p) => p.theme.media.tablet}) {
-    margin-left: 25px;
+    margin-left: 35px;
 }
 
     @media screen and (${(p) => p.theme.media.desktop}) {
-    font-size: ${p =>p.theme.fontSize.xl};
+    font-size: ${p =>p.theme.fontSizes.xl};
     font-weight: 600;
     margin-top: 20px;
     margin-bottom: 25px;
-    margin-left: 20px;
+    margin-left: 30px;
 }
 `
 
@@ -160,49 +143,46 @@ export const Icon = styled.svg`
     height: 18px;
     width: 18px;
     position: absolute;
-    top: 26px;
-    left: 30px;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
+    top: 15px;
+    left: 20px;
+
 
     stroke: ${(props) => {
     if (props.strength === 'Very Weak') return '#E74A3B';
     if (props.strength === 'Weak') return '#E67E22';
     if (props.strength === 'Medium') return '#F1C40F';
     if (props.strength === 'Strong') return '#2ECC71';
-    return '${p => p.theme.colors.whiteTextColor}';
+    return '#FAFAFA';
   }};
 
     @media screen and (${(p) => p.theme.media.tablet}) {
     height: 24px;
+    top: 19px;
+    left: 48px;
     width: 24px;
-    left: 10.5%;
 }
 
     @media screen and (${(p) => p.theme.media.desktop}) {
     height: 24px;
     width: 24px;
-    left: 11%;
-    top: 35px;
 }
 `
 
 export const InputBox = styled.div`
     display: flex;
     flex-direction: column;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     position: relative;
 `;
 
 export const Input = styled.input`
-    background-color: ${p => p.theme.colors.lightDarckBgColor};
+    background-color: transparent;
     border: 1px solid;
     border-radius: 6px;
     color: ${p => p.theme.colors.whiteTextColor};
     opacity: 0.4;
-    font-size: ${p =>p.theme.fontSize.s};
-    height: 6vh;
-    max-height: 45px;
+    font-size: ${p =>p.theme.fontSizes.s};
+    height: 45px;
     letter-spacing: -2%;
     margin: 0 auto;
     margin-bottom: 3px;
@@ -217,13 +197,12 @@ export const Input = styled.input`
     if (props.strength === 'Weak') return '#E67E22';
     if (props.strength === 'Medium') return '#F1C40F';
     if (props.strength === 'Strong') return '#2ECC71';
-    return '${p => p.theme.colors.whiteTextColor}';
+    return '#FAFAFA';
   }};
 
     &::placeholder {
         color: ${p => p.theme.colors.whiteTextColor};
-        font-family: Poppins;
-        font-size: ${p =>p.theme.fontSize.s};
+        font-size: ${p =>p.theme.fontSizes.s};
     }
 
     &:focus,
@@ -233,35 +212,33 @@ export const Input = styled.input`
     if (props.strength === 'Weak') return '#E67E22';
     if (props.strength === 'Medium') return '#F1C40F';
     if (props.strength === 'Strong') return '#2ECC71';
-    return '${p => p.theme.colors.whiteTextColor}';
+    return '#FAFAFA';
   }};
         opacity: 1;
         outline: 0;
     }
 
     @media screen and (${(p) => p.theme.media.tablet}) {
-    font-size: ${p =>p.theme.fontSize.xm};
-    height: 6vh;
-    max-height: 59px;
+    font-size: ${p =>p.theme.fontSizes.xm};
+    height: 59px;
     padding-left: 45px;
     width: 52vw;
     max-width: 400px;
 
     &::placeholder {
-      font-size: ${p =>p.theme.fontSize.xm};
+      font-size: ${p =>p.theme.fontSizes.xm};
     }
 }
 
     @media screen and (${(p) => p.theme.media.desktop}) {
-    font-size: ${p =>p.theme.fontSize.xm};
-    height: 8vh;
-    max-height: 59px;
+    font-size: ${p =>p.theme.fontSizes.xm};
+    height: 59px;
     padding-left: 55px;
     width: 28vw;
     max-width: 400px;
 
     &::placeholder {
-      font-size: ${p =>p.theme.fontSize.xm};
+      font-size: ${p =>p.theme.fontSizes.xm};
     }
 }
 `;
@@ -274,17 +251,17 @@ export const PasswordStrength = styled.div`
     if (props.strength === 'Strong') return '#2ECC71';
     return 'transparent';
   }};
-  font-family: Poppins;
-  font-size: ${p =>p.theme.fontSize.xs};
-  position: relative;
+  font-size: ${p =>p.theme.fontSizes.xs};
+  position: absolute;
   margin-left: 10px;
-  top: -13px;
+  margin-top: 55px;
 
   @media screen and (${(p) => p.theme.media.tablet}) {
-    margin-left: 25px;
+  margin-left: 35px;
+  margin-top: 70px;
   }
 
   @media screen and (${(p) => p.theme.media.desktop}) {
-    margin-left: 20px;
+    margin-left: 30px;
   }
 `;

@@ -6,7 +6,7 @@ export const Cancel = styled.button`
     border-radius: 6px;
     color: ${p => p.theme.colors.mainTextColor};
     cursor: pointer;
-    font-size: ${p =>p.theme.fontSize.s};
+    font-size: ${p =>p.theme.fontSizes.s};
     height: 49px;
     transition-duration: 0.5s;
     width: 137px;
@@ -18,7 +18,7 @@ export const Cancel = styled.button`
     }
 
     @media screen and (${(p) => p.theme.media.tablet}) {
-    font-size: ${p =>p.theme.fontSize.m};
+    font-size: ${p =>p.theme.fontSizes.m};
     height: 59px;
     width: 192px; 
     }
@@ -35,7 +35,7 @@ export const Logout = styled.button`
     border-radius: 6px;
     color: ${p => p.theme.colors.mainTextColor};
     cursor: pointer;
-    font-size: ${p =>p.theme.fontSize.s};
+    font-size: ${p =>p.theme.fontSizes.s};
     height: 49px;
     transition-duration: 0.5s;
     width: 137px;
@@ -47,7 +47,7 @@ export const Logout = styled.button`
     }
 
     @media screen and (${(p) => p.theme.media.tablet}) {
-    font-size: ${p =>p.theme.fontSize.m};
+    font-size: ${p =>p.theme.fontSizes.m};
     height: 59px;
     width: 192px; 
 }
@@ -64,7 +64,7 @@ export const OtherCategories = styled.button`
     border-radius: 24px 44px;
     color: ${p => p.theme.colors.yummyColor};
     cursor: pointer;
-    font-size: ${p =>p.theme.fontSize.s};
+    font-size: ${p =>p.theme.fontSizes.s};
     height: 46px;
     transition-duration: 0.5s;
     width: 195px;
@@ -76,7 +76,7 @@ export const OtherCategories = styled.button`
     }
 
     @media screen and (${(p) => p.theme.media.tablet}) {
-    font-size: ${p =>p.theme.fontSize.m};
+    font-size: ${p =>p.theme.fontSizes.m};
     height: 61px;
     width: 239px;
 }
@@ -88,7 +88,7 @@ export const SearchBlack = styled.button`
     border-radius: 24px 44px;
     color: ${p => p.theme.colors.whiteTextColor};
     cursor: pointer;
-    font-size: ${p =>p.theme.fontSize.s};
+    font-size: ${p =>p.theme.fontSizes.s};
     height: 52px;
     transition-duration: 0.5s;
     width: 113px;
@@ -99,7 +99,7 @@ export const SearchBlack = styled.button`
     }
 
     @media screen and (${(p) => p.theme.media.tablet}) {
-    font-size: ${p =>p.theme.fontSize.m};
+    font-size: ${p =>p.theme.fontSizes.m};
     height: 59px;
     width: 116px;
 }
@@ -116,7 +116,7 @@ export const SearchGreen = styled.button`
     border-radius: 24px 44px;
     color: ${p => p.theme.colors.whiteTextColor};
     cursor: pointer;
-    font-size: ${p =>p.theme.fontSize.s};
+    font-size: ${p =>p.theme.fontSizes.s};
     height: 70px;
     transition-duration: 0.5s;
     width: 161px;
@@ -127,7 +127,7 @@ export const SearchGreen = styled.button`
     }
 
     @media screen and (${(p) => p.theme.media.tablet}) {
-    font-size: ${p =>p.theme.fontSize.m};
+    font-size: ${p =>p.theme.fontSizes.m};
     height: 59px;
     width: 116px;
 }
@@ -144,7 +144,7 @@ export const SignIn = styled.button`
     border-radius: 24px 44px;
     color: ${p => p.theme.colors.whiteTextColor};
     cursor: pointer;
-    font-size: ${p =>p.theme.fontSize.s};
+    font-size: ${p =>p.theme.fontSizes.s};
     height: 45px;
     transition-duration: 0.5s;
     width: 95px;
@@ -157,7 +157,7 @@ export const SignIn = styled.button`
     }
 
     @media screen and (${(p) => p.theme.media.tablet}) {
-    font-size: ${p =>p.theme.fontSize.m};
+    font-size: ${p =>p.theme.fontSizes.m};
     height: 67px;
     width: 141px;
 }
@@ -169,7 +169,7 @@ export const Subscribe = styled.button`
     border-radius: 6px;
     color: ${p => p.theme.colors.whiteTextColor};
     cursor: pointer;
-    font-size: ${p =>p.theme.fontSize.s};
+    font-size: ${p =>p.theme.fontSizes.s};
     height: 38px;
     transition-duration: 0.5s;
     width: 204px;
@@ -180,7 +180,7 @@ export const Subscribe = styled.button`
     }
 
     @media screen and (${(p) => p.theme.media.tablet}) {
-    font-size: ${p =>p.theme.fontSize.m};
+    font-size: ${p =>p.theme.fontSizes.m};
     height: 50px;
     width: 187px;
 }

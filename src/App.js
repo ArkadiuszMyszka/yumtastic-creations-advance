@@ -20,7 +20,7 @@ import { Route, Routes } from 'react-router-dom';
 const RegisterPage = lazy(() => import('./pages/RegisterPage/RegisterPage'));
 // const SearchPage = React.lazy(() => import('pages/Search/Search'));
 // const ShoppingListPage = React.lazy(() => import('pages/ShoppingList'));
-// const SigninPage = lazy(() => import('../pages/Signin'));
+const SigninPage = lazy(() => import('./pages/SigninPage/SigninPage'));
 // const WelcomePage = lazy(() => import('../pages/Welcome'));
 
 const App = () => {
@@ -56,7 +56,7 @@ const App = () => {
           path="/signin"
           element={
             <RestrictedRoute
-            // component={<SigninPage />}
+            component={<SigninPage />}
             />
           }
         />

@@ -80,10 +80,6 @@ export const ErrorMessageStyled = styled.div`
     margin-left: 35px;
     margin-top: 60px;
 }
-
-    @media screen and (${(p) => p.theme.media.desktop}) {
-    margin-left: 30px;
-}
 `;
 
 export const Form = styled.form`

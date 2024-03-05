@@ -19,6 +19,24 @@ export const theme = {
     bgMainDark: '#1E1F28',
     bgMobileMenu: '#EBF3D4',
     bgModalDark: '#2A2C36',
+    yummyColor: '#22252A',
+    mainTextColor: '#23262A',
+    titleTextColor: '#001833',
+    subtitleTextColor: '#3E4462',
+    whiteTextColor: '#FAFAFA',
+    greyTextColor: '#BDBDBD',
+    middleGreyTextColor: '#3E4462',
+    lightGreyTextColor: '#7E7E7E',
+    greenTextColor: '#8BAA36',
+    blackTextColor: '#000000',
+    lightTextColor: '#333333',
+    paginationColor: '#656565',
+    footerDarckTextColor: '#22252A',
+    greySelectColor: '#F5F5F5',
+    bgMain: '#FAFAFA',
+    bgMainDark: '#1E1F28',
+    bgMobileMenu: '#EBF3D4',
+    bgModalDark: '#2A2C36',
 
     lightBgColor: '#ECECEC',
     lightDarckBgColor: '#2A2C36',
@@ -59,7 +77,7 @@ export const theme = {
     bold: 700,
   },
 
-  // font-size: ${p =>p.theme.fontSize.m};
+  // font-size: ${p =>p.theme.fontSizes.m};
   fontSizes: {
     xxs: '8px',
     x: '10px',

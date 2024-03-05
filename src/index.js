@@ -16,7 +16,7 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <ThemeProvider theme={theme}>
-        <BrowserRouter basename="/yumtastic-creations-advance">
+        <BrowserRouter basename="">
           <GlobalStyles />
           <App />
         </BrowserRouter>

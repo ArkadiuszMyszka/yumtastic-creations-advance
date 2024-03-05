@@ -1,7 +1,7 @@
 import { refreshUser } from './redux/auth/authOperations.jsx';
 import useAuth from './hooks/useAuth.jsx';
 import { useDispatch } from 'react-redux';
-import { useEffect } from 'react'; // dodac lazy
+import { lazy, useEffect } from 'react'; // dodac lazy
 // import { SharedLayout } from './Layout.jsx'; // do zmiany jak dojdzie plik
 import PrivateRoute from './components/PrivateRoute.jsx';
 import React from 'react';
@@ -17,10 +17,10 @@ import { Route, Routes } from 'react-router-dom';
 // const MyRecipesPage = React.lazy(() => import('pages/MyRecipes'));
 // const NotFoundPage = lazy(() => import('pages/NotFoundPage'));
 // const RecipesPage = React.lazy(() => import('pages/Recipe'));
-// const RegisterPage = lazy(() => import('../pages/Register'));
+const RegisterPage = lazy(() => import('./pages/RegisterPage/RegisterPage'));
 // const SearchPage = React.lazy(() => import('pages/Search/Search'));
 // const ShoppingListPage = React.lazy(() => import('pages/ShoppingList'));
-// const SigninPage = lazy(() => import('../pages/Signin'));
+const SigninPage = lazy(() => import('./pages/SigninPage/SigninPage'));
 // const WelcomePage = lazy(() => import('../pages/Welcome'));
 
 const App = () => {
@@ -48,7 +48,7 @@ const App = () => {
           path="/register"
           element={
             <RestrictedRoute
-            // component={<RegisterPage />}
+            component={<RegisterPage />}
             />
           }
         />
@@ -56,7 +56,7 @@ const App = () => {
           path="/signin"
           element={
             <RestrictedRoute
-            // component={<SigninPage />}
+            component={<SigninPage />}
             />
           }
         />

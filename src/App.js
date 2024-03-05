@@ -1,10 +1,10 @@
-import { refreshUser } from './redux/auth/authOperations.jsx';
-import useAuth from './hooks/useAuth.jsx';
-import { useDispatch } from 'react-redux';
-import { useEffect } from 'react'; // dodac lazy
+// import { refreshUser } from './redux/auth/authOperations.jsx';
+// import useAuth from './hooks/useAuth.jsx';
+// import { useDispatch } from 'react-redux';
+// import { useEffect } from 'react'; // dodac lazy
 // import { SharedLayout } from './Layout.jsx'; // do zmiany jak dojdzie plik
 import PrivateRoute from './components/PrivateRoute.jsx';
-import React, { lazy }  from 'react';
+import React, { lazy } from 'react';
 import RestrictedRoute from './components/RestrictedRoute.jsx';
 import { Route, Routes } from 'react-router-dom';
 
@@ -27,29 +27,19 @@ const App = () => {
   return (
     <Routes>
       <>
-        <Route
+        {/* <Route
           path="/welcome"
-          element={
-            <RestrictedRoute
-            // component={<WelcomePage />}
-            />
-          }
-        />
+          element={<RestrictedRoute component={<WelcomePage />} />}
+        /> */}
+        <Route path="/welcome" element={<WelcomePage />} />
+
         <Route
           path="/register"
-          element={
-            <RestrictedRoute
-            component={<RegisterPage />}
-            />
-          }
+          element={<RestrictedRoute component={<RegisterPage />} />}
         />
         <Route
           path="/signin"
-          element={
-            <RestrictedRoute
-            component={<SigninPage />}
-            />
-          }
+          element={<RestrictedRoute component={<SigninPage />} />}
         />
       </>
 

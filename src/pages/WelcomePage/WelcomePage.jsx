@@ -6,7 +6,7 @@ import {
   Title,
   Paragraph,
 } from './WelcomePage.styled.jsx';
-// import { AuthNav } from '../../components/WelcomePageComponents/AuthNav/AuthNav';
+import { AuthNav } from '../../components/WelcomePage/AuthNav/AuthNav';
 import logoSVG from '../../images/ui/logo/logo_desktop_tablet.svg';
 
 export const WelcomePage = () => {
@@ -20,7 +20,7 @@ export const WelcomePage = () => {
           designed to be your very own digital cookbook. You can easily save and
           retrieve your own recipes at any time.
         </Paragraph>
-        {/* <AuthNav /> */}
+        <AuthNav />
       </Container>
     </Background>
   );

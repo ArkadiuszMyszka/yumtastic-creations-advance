@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 import backgroundImage from '../../images/graphics/start-salad-full.png';
+import { theme } from '../../styles/theme';
 
 export const Background = styled.main`
-  @media screen and (min-width: ${p => p.theme.media.desktop}) {
+  @media screen and (${theme.media.desktop}) {
     background-position: 50% 65%;
     background-size: 115%;
   }
-  @media screen and (min-width: ${p => p.theme.media.tablet}) {
+  @media screen and (${theme.media.tablet}) {
     background-position: 60% 70%;
     background-size: 180%;
   }
@@ -30,10 +31,10 @@ export const Background = styled.main`
 `;
 
 export const Container = styled.div`
-  @media screen and (min-width: ${p => p.theme.media.desktop}) {
+  @media screen and (${theme.media.desktop}) {
     width: 544px;
   }
-  @media screen and (min-width: ${p => p.theme.media.tablet}) {
+  @media screen and (${theme.media.tablet}) {
     width: 520px;
   }
   width: 305px;
@@ -41,13 +42,11 @@ export const Container = styled.div`
   text-align: center;
   justify-content: center;
   flex-direction: column;
-  //   font-family: Poppins;
-  //   font-style: normal;
   isolation: isolate;
 `;
 
 export const LogoSVG = styled.img`
-  @media screen and (min-width: ${p => p.theme.media.tablet}) {
+  @media screen and (${theme.media.tablet}) {
     width: 68px;
   }
   width: 54px;
@@ -55,31 +54,31 @@ export const LogoSVG = styled.img`
 `;
 
 export const Title = styled.h1`
-  @media screen and (min-width: ${p => p.theme.media.tablet}) {
+  @media screen and (${theme.media.tablet}) {
     height: 35px;
     margin-top: 44px;
-    font-size: ${p => p.theme.fontSize.xl};
+    font-size: ${theme.fontSizes.xl};
     line-height: 28px;
   }
   height: 24px;
   margin: 0;
   margin-top: 28px;
-  color: ${p => p.theme.colors.whiteColor};
-  font-weight: ${p => p.theme.media.semiBold};
-  font-size: ${p => p.theme.fontSize.l};
+  color: ${theme.colors.whiteColor};
+  font-weight: ${theme.fontWeights.semiBold};
+  font-size: ${theme.fontSizes.l};
   line-height: 24px;
 `;
 
 export const Paragraph = styled.p`
-  @media screen and (min-width: ${p => p.theme.media.tablet}) {
-    font-size: ${p => p.theme.fontSize.xm};
+  @media screen and (${theme.media.tablet}) {
+    font-size: ${theme.fontSizes.xm};
     line-height: 1.28;
   }
   margin: 0;
   margin-top: 14px;
-  color: ${p => p.theme.colors.whiteColor};
-  font-weight: ${p => p.theme.media.normal};
-  font-size: ${p => p.theme.fontSize.s};
+  color: ${theme.colors.whiteColor};
+  font-weight: ${theme.fontWeights.normal};
+  font-size: ${theme.fontSizes.s};
   line-height: 1.28;
   text-align: center;
 `;

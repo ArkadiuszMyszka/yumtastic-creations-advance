@@ -23,7 +23,7 @@ export const theme = {
     lightBgColor: '#ECECEC',
     lightDarckBgColor: '#2A2C36',
     darckBgColor: '#1E1F28',
-    btnDarckBgColor: '#22252A',
+    btnDarkBgColor: '#22252A',
     greenBgColor: '#8BAA36',
     footerLogoBgColor: '#EBF3D4',
 

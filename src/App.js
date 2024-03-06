@@ -1,7 +1,7 @@
 // import { refreshUser } from './redux/auth/authOperations.jsx';
 // import useAuth from './hooks/useAuth.jsx';
 // import { useDispatch } from 'react-redux';
-// import { useEffect } from 'react'; // dodac lazy
+// import { lazy, useEffect } from 'react'; // dodac lazy
 // import { SharedLayout } from './Layout.jsx'; // do zmiany jak dojdzie plik
 import PrivateRoute from './components/PrivateRoute.jsx';
 import React, { lazy } from 'react';

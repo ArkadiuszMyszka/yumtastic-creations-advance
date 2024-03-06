@@ -179,6 +179,12 @@ export const Subscribe = styled.button`
         color: ${p => p.theme.colors.yummyColor};
     }
 
+    &:disabled {
+    background-color: ${p => p.theme.colors.textAreaBg};
+    border: 1px solid ${p => p.theme.colors.textAreaBg};
+    color: ${p => p.theme.colors.mainTextColor};
+  }
+
     @media screen and (${(p) => p.theme.media.tablet}) {
     font-size: ${p =>p.theme.fontSizes.m};
     height: 50px;

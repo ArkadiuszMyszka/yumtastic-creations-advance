@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 import {
   fetchCategoriesList,
@@ -11,10 +11,10 @@ import {
   getRecipesPopular,
   addRecipe,
   fetchAllRecipes,
-} from "./recipesOperations.jsx";
+} from './recipesOperations.jsx';
 
-import { getFavorite, removeFavorite } from "./favoritesOperations";
-import { getOwnRecipes, removeOwnRecipe } from "./ownRecipesOperations";
+import { getFavorite, removeFavorite } from './favoritesOperations';
+import { getOwnRecipes, removeOwnRecipe } from './ownRecipesOperations';
 
 const initialState = {
   items: [],
@@ -30,11 +30,11 @@ const initialState = {
 };
 
 const recipesSlice = createSlice({
-  name: "recipes",
+  name: 'recipes',
   initialState,
-  extraReducers: (builder) => {
+  extraReducers: builder => {
     builder
-      .addCase(fetchRecipesMainPage.pending, (state) => {
+      .addCase(fetchRecipesMainPage.pending, state => {
         state.isLoading = true;
       })
       .addCase(fetchRecipesMainPage.fulfilled, (state, action) => {
@@ -47,7 +47,7 @@ const recipesSlice = createSlice({
         state.error = action.payload;
       })
 
-      .addCase(getRecipeById.pending, (state) => {
+      .addCase(getRecipeById.pending, state => {
         state.isLoading = true;
       })
       .addCase(getRecipeById.fulfilled, (state, action) => {
@@ -60,11 +60,11 @@ const recipesSlice = createSlice({
         state.error = action.payload;
       })
 
-      .addCase(addToFavorites.pending, (state) => {
+      .addCase(addToFavorites.pending, state => {
         state.isLoading = true;
       })
       .addCase(addToFavorites.fulfilled, (state, action) => {
-        state.items.map((item) => item.id === action.payload.id);
+        state.items.map(item => item.id === action.payload.id);
         state.isLoading = false;
         state.error = null;
       })
@@ -73,11 +73,11 @@ const recipesSlice = createSlice({
         state.error = action.payload;
       })
 
-      .addCase(removeFromFavorites.pending, (state) => {
+      .addCase(removeFromFavorites.pending, state => {
         state.isLoading = true;
       })
       .addCase(removeFromFavorites.fulfilled, (state, action) => {
-        state.items.map((item) => item.id === action.payload.id);
+        state.items.map(item => item.id === action.payload.id);
         state.isLoading = false;
         state.error = null;
       })
@@ -86,7 +86,7 @@ const recipesSlice = createSlice({
         state.error = action.payload;
       })
 
-      .addCase(getRecipesPopular.pending, (state) => {
+      .addCase(getRecipesPopular.pending, state => {
         state.isLoading = true;
       })
       .addCase(getRecipesPopular.fulfilled, (state, action) => {
@@ -99,7 +99,7 @@ const recipesSlice = createSlice({
         state.error = action.payload;
       })
 
-      .addCase(fetchAllRecipes.pending, (state) => {
+      .addCase(fetchAllRecipes.pending, state => {
         state.isLoading = true;
       })
       .addCase(fetchAllRecipes.fulfilled, (state, action) => {
@@ -112,7 +112,7 @@ const recipesSlice = createSlice({
         state.error = action.payload;
       })
 
-      .addCase(fetchSearchRecipes.pending, (state) => {
+      .addCase(fetchSearchRecipes.pending, state => {
         state.isLoading = true;
       })
       .addCase(fetchSearchRecipes.fulfilled, (state, action) => {
@@ -125,7 +125,7 @@ const recipesSlice = createSlice({
         state.error = action.payload;
       })
 
-      .addCase(fetchCategoriesList.pending, (state) => {
+      .addCase(fetchCategoriesList.pending, state => {
         state.isLoading = true;
       })
       .addCase(fetchCategoriesList.fulfilled, (state, action) => {
@@ -138,7 +138,7 @@ const recipesSlice = createSlice({
         state.error = action.payload;
       })
 
-      .addCase(fetchRecipesByCategory.pending, (state) => {
+      .addCase(fetchRecipesByCategory.pending, state => {
         state.isLoading = true;
       })
       .addCase(fetchRecipesByCategory.fulfilled, (state, action) => {
@@ -152,7 +152,7 @@ const recipesSlice = createSlice({
         state.error = action.payload;
       })
 
-      .addCase(addRecipe.pending, (state) => {
+      .addCase(addRecipe.pending, state => {
         state.isLoading = true;
       })
       .addCase(addRecipe.fulfilled, (state, action) => {
@@ -165,7 +165,7 @@ const recipesSlice = createSlice({
         state.error = action.payload;
       })
 
-      .addCase(getOwnRecipes.pending, (state) => {
+      .addCase(getOwnRecipes.pending, state => {
         state.isLoading = true;
       })
       .addCase(getOwnRecipes.fulfilled, (state, { payload }) => {
@@ -178,7 +178,7 @@ const recipesSlice = createSlice({
         state.error = action.payload;
       })
 
-      .addCase(removeOwnRecipe.pending, (state) => {
+      .addCase(removeOwnRecipe.pending, state => {
         state.isLoading = true;
       })
       .addCase(removeOwnRecipe.fulfilled, (state, { payload }) => {
@@ -191,7 +191,7 @@ const recipesSlice = createSlice({
         state.error = action.payload;
       })
 
-      .addCase(getFavorite.pending, (state) => {
+      .addCase(getFavorite.pending, state => {
         state.isLoading = true;
       })
       .addCase(getFavorite.fulfilled, (state, { payload }) => {
@@ -204,7 +204,7 @@ const recipesSlice = createSlice({
         state.error = action.payload;
       })
 
-      .addCase(removeFavorite.pending, (state) => {
+      .addCase(removeFavorite.pending, state => {
         state.isLoading = true;
       })
       .addCase(removeFavorite.fulfilled, (state, { payload }) => {
@@ -220,3 +220,32 @@ const recipesSlice = createSlice({
 });
 
 export const recipesReducer = recipesSlice.reducer;
+
+// import { createSlice } from '@reduxjs/toolkit';
+// import { getMainPageRecipes } from './operations.jsx';
+
+// const recipesSlice = createSlice({
+//   name: 'recipes',
+//   initialState: {
+//     categoryRecipes: [],
+//     isLoading: false,
+//     error: null,
+//   },
+//   extraReducers: builder =>
+//     builder
+//       .addCase(getMainPageRecipes.pending, state => {
+//         state.isLoading = true;
+//         state.error = null;
+//       })
+//       .addCase(getMainPageRecipes.fulfilled, (state, action) => {
+//         state.isLoading = false;
+//         state.error = null;
+//         state.categoryRecipes = action.payload;
+//       })
+//       .addCase(getMainPageRecipes.rejected, (state, action) => {
+//         state.isLoading = false;
+//         state.error = action.payload;
+//       }),
+// });
+
+// export const recipesReducer = recipesSlice.reducer;

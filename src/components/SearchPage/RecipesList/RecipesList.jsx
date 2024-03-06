@@ -1,7 +1,7 @@
-import React, { useState, useLayoutEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useLayoutEffect } from 'react';
+import { Link } from 'react-router-dom';
 
-import { Thumb, Label, Image, List, ListItem } from "./RecipesList.styled.js";
+import { Thumb, Label, Image, List, ListItem } from './RecipesList.styled.jsx';
 
 const MAX_TITLE_LENGTH = 25;
 
@@ -20,10 +20,10 @@ const RecipesList = ({ category, title }) => {
       setWindowWidth(window.innerWidth);
     };
 
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 

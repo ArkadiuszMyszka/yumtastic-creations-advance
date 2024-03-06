@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import { selectSearchFilter } from "../../../redux/search/searchSelectors.js";
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { selectSearchFilter } from '../../../redux/search/searchSelectors.js';
 
-import { MdArrowDropDown } from "react-icons/md";
+import { MdArrowDropDown } from 'react-icons/md';
 
 import {
   PositionWrapper,
@@ -10,7 +10,7 @@ import {
   StyledSelect,
   StyledMenuItem,
   OptionWrapper,
-} from "./SelectOption.styled";
+} from './SelectOption.styled.jsx';
 
 const SelectOption = ({ options, onChange }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,17 +18,17 @@ const SelectOption = ({ options, onChange }) => {
   const chosenOption = useSelector(selectSearchFilter);
 
   useEffect(() => {
-    if (chosenOption !== "") {
+    if (chosenOption !== '') {
       setSelectedOption(chosenOption);
     }
   }, [chosenOption]);
 
-  const handleSelect = (option) => {
+  const handleSelect = option => {
     setSelectedOption(option);
     setIsOpen(false);
     if (onChange) {
       onChange(option);
-      console.log("selectOption handleSelect");
+      console.log('selectOption handleSelect');
     }
   };
 
@@ -41,7 +41,7 @@ const SelectOption = ({ options, onChange }) => {
       {isOpen && (
         <OptionWrapper>
           <StyledSelect>
-            {options.map((option) => (
+            {options.map(option => (
               <StyledMenuItem key={option} onClick={() => handleSelect(option)}>
                 {option}
               </StyledMenuItem>

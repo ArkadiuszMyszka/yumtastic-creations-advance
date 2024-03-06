@@ -4,18 +4,18 @@ import {
   useState,
   useCallback,
   useRef,
-} from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useSearchParams } from "react-router-dom";
-import { useLocation } from "react-router";
-import { toast } from "react-toastify";
+} from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useSearchParams } from 'react-router-dom';
+import { useLocation } from 'react-router';
+import { toast } from 'react-toastify';
 
-import { List } from "./SearchedRecipesList.styled.js";
+import { List } from './SearchedRecipesList.styled.jsx';
 
-import RecipesList from "../RecipesList/RecipesList.jsx";
-import EmptyPage from "../EmptySearchPage/EmptySearchPage.jsx";
-import Loader from "../../Loader/Loader.jsx";
-import Paginator from "../../Paginator/Paginator.jsx";
+import RecipesList from '../RecipesList/RecipesList.jsx';
+import EmptyPage from '../EmptySearchPage/EmptySearchPage.jsx';
+import Loader from '../../Loader/Loader.jsx';
+import Paginator from '../../Paginator/Paginator.jsx';
 
 import {
   selectRecipeByTitle,
@@ -23,15 +23,15 @@ import {
   selectCurrentPage,
   selectIsLoading,
   selectError,
-} from "../../../redux/search/searchSelectors.js";
+} from '../../../redux/search/searchSelectors.js';
 
-import { getRecipesByTitle } from "../../../redux/search/searchOperations.js";
+import { getRecipesByTitle } from '../../../redux/search/searchOperations.js';
 
 import {
   resetRecipeByIngredient,
   setCurrentPage,
   resetCurrentPage,
-} from "../../../redux/search/searchSlice.js";
+} from '../../../redux/search/searchSlice.js';
 
 export default function SearchedRecipesList() {
   const searchedList = useSelector(selectRecipeByTitle);
@@ -52,21 +52,21 @@ export default function SearchedRecipesList() {
   const itemsPerPage = 6;
 
   useEffect(() => {
-    if (error) toast.warning("Error:", error);
+    if (error) toast.warning('Error:', error);
   }, [error]);
 
   useEffect(() => {
-    if (location.state && location.state.from === "/main") {
+    if (location.state && location.state.from === '/main') {
       const params = Object.fromEntries(searchParams.entries());
       const { q } = params;
-      const title = searchParams.get("q");
-      if (q && q !== "") {
+      const title = searchParams.get('q');
+      if (q && q !== '') {
         dispatch(resetCurrentPage());
         dispatch(resetRecipeByIngredient());
         dispatch(getRecipesByTitle(title)).then(() => {
           setSearchedForRecipe(true);
         });
-        console.log("searchRecipeList empty q");
+        console.log('searchRecipeList empty q');
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -76,17 +76,15 @@ export default function SearchedRecipesList() {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
   const visibleRecipeList = useCallback(() => {
     let visibleList =
-      searchedList?.length > 0
-        ? searchedList
-        : serchedIngredList?.map((i) => i);
+      searchedList?.length > 0 ? searchedList : serchedIngredList?.map(i => i);
     setVisibleRecipes(visibleList);
   }, [searchedList, serchedIngredList]);
 
@@ -95,17 +93,17 @@ export default function SearchedRecipesList() {
   }, [visibleRecipeList]);
 
   const handlePageChange = useCallback(
-    (pageNumber) => {
+    pageNumber => {
       dispatch(setCurrentPage(pageNumber));
-      listRef.current?.scrollIntoView({ behavior: "smooth" });
-      console.log("page change");
+      listRef.current?.scrollIntoView({ behavior: 'smooth' });
+      console.log('page change');
     },
-    [dispatch]
+    [dispatch],
   );
 
   const currentPageData = visibleRecipes.slice(
     (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage
+    currentPage * itemsPerPage,
   );
 
   return (
@@ -123,7 +121,7 @@ export default function SearchedRecipesList() {
                   windowWidth >= 1280
                     ? 12
                     : (windowWidth >= 1280 ? visibleRecipes : currentPageData)
-                        .length
+                        .length,
                 )
                 .map(({ _id: recipeId, title }) => (
                   <RecipesList key={recipeId} id={recipeId} title={title} />

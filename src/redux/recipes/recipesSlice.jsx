@@ -13,8 +13,8 @@ import {
   fetchAllRecipes,
 } from './recipesOperations.jsx';
 
-import { getFavorite, removeFavorite } from './favoritesOperations';
-import { getOwnRecipes, removeOwnRecipe } from './ownRecipesOperations';
+import { getFavorite, removeFavorite } from './recipesFavoritesOperations.jsx';
+import { getOwnRecipes, removeOwnRecipe } from './recipesOwnOperations.jsx';
 
 const initialState = {
   items: [],

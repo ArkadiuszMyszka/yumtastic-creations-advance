@@ -1,13 +1,13 @@
-import { createSlice, isAnyOf } from "@reduxjs/toolkit";
+import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import {
   fetchShoppingList,
   addIngredientToShoppingList,
   deleteIngredientFromShoppingList,
-} from "./operations";
-import * as reducer from "./reducers";
+} from './shoppingListOperations.jsx';
+import * as reducer from './shoppingListReducers.jsx';
 
 const extraActions = [fetchShoppingList, addIngredientToShoppingList];
-const getActions = (type) => extraActions.map((action) => action[type]);
+const getActions = type => extraActions.map(action => action[type]);
 
 const initialState = {
   items: [],
@@ -16,22 +16,22 @@ const initialState = {
 };
 
 const shoppingListSlice = createSlice({
-  name: "shoppingList",
+  name: 'shoppingList',
   initialState,
-  extraReducers: (builder) =>
+  extraReducers: builder =>
     builder
       .addCase(fetchShoppingList.fulfilled, reducer.fetchIngredientFulfilled)
       .addCase(
         addIngredientToShoppingList.fulfilled,
-        reducer.addIngredientFulfilled
+        reducer.addIngredientFulfilled,
       )
       .addCase(
         deleteIngredientFromShoppingList.fulfilled,
-        reducer.deleteIngredientFulfilled
+        reducer.deleteIngredientFulfilled,
       )
-      .addMatcher(isAnyOf(...getActions("pending")), reducer.anyPending)
-      .addMatcher(isAnyOf(...getActions("fulfilled")), reducer.anyFulfilled)
-      .addMatcher(isAnyOf(...getActions("rejected")), reducer.anyRejected),
+      .addMatcher(isAnyOf(...getActions('pending')), reducer.anyPending)
+      .addMatcher(isAnyOf(...getActions('fulfilled')), reducer.anyFulfilled)
+      .addMatcher(isAnyOf(...getActions('rejected')), reducer.anyRejected),
 });
 
 export const shoppingListReducer = shoppingListSlice.reducer;

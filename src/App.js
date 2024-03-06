@@ -2,7 +2,7 @@
 // import useAuth from './hooks/useAuth.jsx';
 // import { useDispatch } from 'react-redux';
 // import { lazy, useEffect } from 'react'; // dodac lazy
-// import { SharedLayout } from './Layout.jsx'; // do zmiany jak dojdzie plik
+// import { SharedLayout } from './components/SharedLayout/SharedLayout.jsx'; // do zmiany jak dojdzie plik
 import PrivateRoute from './components/PrivateRoute.jsx';
 import React, { lazy } from 'react';
 import RestrictedRoute from './components/RestrictedRoute.jsx';
@@ -10,7 +10,9 @@ import { Route, Routes } from 'react-router-dom';
 
 // do zmiany sciezki na bieżąco jak bedą pojawiac sie pliki
 
-// const AddRecipesPage = React.lazy(() => import('pages/AddRecipes'));
+const AddRecipesPage = React.lazy(
+  () => import('./pages/AddRecipePage/AddRecipePage.jsx'),
+);
 // const CategoriesPage = React.lazy(() => import('pages/Categories'));
 // const FavoritesPage = React.lazy(() => import('pages/Favorites'));
 // const MainPage = React.lazy(() => import('pages/Main'));
@@ -43,78 +45,71 @@ const App = () => {
         />
       </>
 
+      {/* <Route path="/" element={<SharedLayout />}> */}
       <Route
-        path="/"
-        // element={<SharedLayout />}
-      >
-        <Route
-          index
-          // element={<PrivateRoute component={<MainPage />} />}
-        />
+        index
+        // element={<PrivateRoute component={<MainPage />} />}
+      />
 
-        <Route
-          path="categories/:categoryName"
-          element={
-            <PrivateRoute
-              redirectTo="/welcome"
-              // component={<CategoriesPage />}
-            />
-          }
-        />
+      <Route
+        path="categories/:categoryName"
+        element={
+          <PrivateRoute
+            redirectTo="/welcome"
+            // component={<CategoriesPage />}
+          />
+        }
+      />
 
-        <Route
-          path="add"
-          element={
-            <PrivateRoute
-            // component={<AddRecipesPage />}
-            />
-          }
-        />
-        <Route
-          path="my"
-          element={
-            <PrivateRoute
-            // component={<MyRecipesPage />}
-            />
-          }
-        />
-        <Route
-          path="favorite"
-          element={
-            <PrivateRoute
-            // component={<FavoritesPage />}
-            />
-          }
-        />
-        <Route
-          path="shopping-list"
-          element={
-            <PrivateRoute
-            // component={<ShoppingListPage />}
-            />
-          }
-        />
-        <Route
-          path="search"
-          element={
-            <PrivateRoute
-            // component={<SearchPage />}
-            />
-          }
-        />
-        <Route
-          path="recipe/:recipeId"
-          element={
-            <PrivateRoute
-            // component={<RecipesPage />}
-            />
-          }
-        />
-        <Route
-          path="*"
-          // element={<NotFoundPage />}
-        />
-      </Route>
+      <Route
+        path="add"
+        element={<PrivateRoute component={<AddRecipesPage />} />}
+      />
+      <Route
+        path="my"
+        element={
+          <PrivateRoute
+          // component={<MyRecipesPage />}
+          />
+        }
+      />
+      <Route
+        path="favorite"
+        element={
+          <PrivateRoute
+          // component={<FavoritesPage />}
+          />
+        }
+      />
+      <Route
+        path="shopping-list"
+        element={
+          <PrivateRoute
+          // component={<ShoppingListPage />}
+          />
+        }
+      />
+      <Route
+        path="search"
+        element={
+          <PrivateRoute
+          // component={<SearchPage />}
+          />
+        }
+      />
+      <Route
+        path="recipe/:recipeId"
+        element={
+          <PrivateRoute
+          // component={<RecipesPage />}
+          />
+        }
+      />
+      <Route
+        path="*"
+        // element={<NotFoundPage />}
+      />
+      {/* </Route> */}
     </Routes>
   );
 };

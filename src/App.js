@@ -26,7 +26,7 @@ const RegisterPage = lazy(() => import('./pages/RegisterPage/RegisterPage'));
 // const SearchPage = React.lazy(() => import('pages/Search/Search'));
 // const ShoppingListPage = React.lazy(() => import('pages/ShoppingList'));
 const SigninPage = lazy(() => import('./pages/SigninPage/SigninPage'));
-// const WelcomePage = lazy(() => import('./pages/WelcomePage/WelcomePage.jsx'));
+const WelcomePage = lazy(() => import('./pages/WelcomePage/WelcomePage.jsx'));
 
 const App = () => {
   // const dispatch = useDispatch();
@@ -47,7 +47,7 @@ const App = () => {
           path="/welcome"
           element={<RestrictedRoute component={<WelcomePage />} />}
         /> */}
-        <Route path="/my" element={<MyRecipesPage />} />
+        <Route path="/welcome" element={<WelcomePage />} />
 
         <Route
           path="/register"
@@ -59,7 +59,7 @@ const App = () => {
         />
       </>
 
-      {/* <Route path="/" element={<SharedLayout />}> */}
+      {/* <Route path="/" element={<SharedLayout />} /> */}
       <Route
         index
         // element={<PrivateRoute component={<MainPage />} />}
@@ -81,11 +81,7 @@ const App = () => {
       />
       <Route
         path="my"
-        element={
-          <PrivateRoute
-          // component={<MyRecipesPage />}
-          />
-        }
+        element={<PrivateRoute component={<MyRecipesPage />} />}
       />
       <Route
         path="favorite"

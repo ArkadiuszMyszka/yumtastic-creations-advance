@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-// import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import MainPageTitle from '../../components/MainPageTitle/MainPageTitle.jsx';
 import MyRecipesList from '../../components/MyRecipesList/MyRecipesList.jsx';
 import Paginator from '../../components/Paginator/Paginator.jsx';
@@ -8,35 +8,23 @@ import {
   MyRecipesEmpty,
   StyledLink,
 } from './MyRecipesPage.styled.jsx';
+import { getRecipes } from '../../redux/myRecipes/myRecipesOperations.jsx';
 
 const MyRecipesPage = () => {
-  const [recipes, setRecipes] = useState([]);
-  const [totalRecipesCount, setTotalRecipesCount] = useState(0);
-
-  const fetchRecipes = async () => {
-    try {
-      const response = await fetch('../../recipes.json');
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-      const data = await response.json();
-      setRecipes(data);
-      setTotalRecipesCount(data.length);
-    } catch (error) {
-      console.error('Error fetching recipes:', error);
-    }
-  };
+  const dispatch = useDispatch();
+  const recipes = useSelector(state => state.my_recipes.items);
+  const totalRecipesCount = useSelector(state => state.my_recipes.total);
 
   useEffect(() => {
-    fetchRecipes();
-  }, []);
+    dispatch(getRecipes({ page: 1, limit: 4 }));
+  }, [dispatch]);
 
   return (
     <OwnerRecipesPage>
       <MainPageTitle title="My recipes" />
       {recipes.length > 0 ? (
         <>
-          <MyRecipesList recipes={recipes} />
+          <MyRecipesList />
           {totalRecipesCount > 4 && (
             <Paginator totalRecipesCount={totalRecipesCount} />
           )}

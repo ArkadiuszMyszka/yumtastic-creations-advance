@@ -1,17 +1,14 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const List = styled.ul`
   display: flex;
+  flex-direction: column;
 
-  @media screen and (max-width: 767px) {
-    flex-direction: column;
-  }
-
-  @media screen and (min-width: 768px) {
+  @media screen and (${p => p.theme.media.tablet}) {
     gap: 32px;
   }
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (${p => p.theme.media.desktop}) {
     gap: 14px;
   }
 `;
@@ -25,14 +22,14 @@ export const ListItem = styled.li`
   border-radius: 8px;
   overflow: hidden;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (${p => p.theme.media.tablet}) {
     flex-direction: row;
     flex-wrap: wrap;
     padding-top: 40px;
     padding-bottom: 50px;
   }
 
-  @media screen and (min-width: 1440px) {
+  @media screen and (${p => p.theme.media.desktop}) {
     padding-top: 90px;
   }
 
@@ -48,13 +45,13 @@ export const Thumb = styled.div`
   height: 323px;
   border-radius: 8px;
   overflow: hidden;
-  background-color: #ffffff;
+  background-color: ${p => p.theme.colors.whiteColor};
 
-  @media screen and (min-width: 768px) {
+  @media screen and (${p => p.theme.media.tablet}) {
     width: 336px;
   }
 
-  @media screen and (min-width: 1440px) {
+  @media screen and (${p => p.theme.media.desktop}) {
     width: 300px;
   }
 `;
@@ -66,31 +63,10 @@ export const Image = styled.img`
   border-radius: 8px;
 `;
 
-// export const TextBox = styled.div`
-//   position: absolute;
-//   bottom: 26px;
-//   right: 18px;
-//   padding-left: 16px;
-//   height: 52px;
-//   width: 307px;
-//   display: flex;
-//   align-items: center;
-//   background-color: #ffffff;
-//   border-radius: 8px;
-
-//   @media screen and (min-width: 768px) {
-//     width: 300px;
-//   }
-
-//   @media screen and (min-width: 1440px) {
-//     width: 268px;
-//   }
-// `;
-
 export const Label = styled.h3`
   font-family: Poppins, sans-serif;
-  font-weight: 600;
-  font-size: 16px;
+  font-weight: ${p => p.theme.media.semiBold};
+  font-size: ${p => p.theme.fontSizes.m};
   line-height: 1.5;
-  color: #3e4462;
+  color: ${p => p.theme.colors.subtitleTextColor};
 `;

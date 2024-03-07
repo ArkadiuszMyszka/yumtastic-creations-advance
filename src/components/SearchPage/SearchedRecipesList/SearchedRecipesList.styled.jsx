@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const List = styled.ul`
   align-items: center;
@@ -7,7 +7,7 @@ export const List = styled.ul`
     margin-bottom: 24px;
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (${p => p.theme.media.tablet}) {
     display: flex;
     flex-direction: column;
     flex-direction: row;
@@ -18,7 +18,7 @@ export const List = styled.ul`
     }
   }
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (${p => p.theme.media.desktop}) {
     flex-direction: row;
     flex-wrap: wrap;
     row-gap: 100px;

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const EmptyWrapper = styled.div`
   margin: 0 auto;
@@ -18,7 +18,7 @@ export const EmptyWrapper = styled.div`
 export const EmptyImgWrapper = styled.div`
   margin: 0 auto;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (${p => p.theme.media.tablet}) {
     width: 350px;
     height: 225px;
   }
@@ -30,10 +30,10 @@ export const EmptyText = styled.p`
   line-height: 1.5;
   font-size: 20px;
   text-align: center;
-  color: #3e4462;
+  color: ${p => p.theme.colors.mainTextColor};
   opacity: 0.5;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (${p => p.theme.media.tablet}) {
     font-size: 24px;
   }
 `;

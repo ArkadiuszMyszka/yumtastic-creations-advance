@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const SearchBarWrapper = styled.div`
   display: flex;
@@ -9,7 +9,7 @@ export const SearchBarWrapper = styled.div`
   flex-direction: column;
   gap: 24px;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (${p => p.theme.media.tablet}) {
     gap: 28px;
   }
 `;

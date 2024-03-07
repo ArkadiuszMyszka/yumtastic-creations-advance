@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { ReactComponent as TrashIcon } from "../../images/ui/other_icons/trash.svg";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { ReactComponent as TrashIcon } from '../../images/icons/trash.svg';
 import {
   RecipeItemContainer,
   RecipeTitle,
@@ -12,12 +12,12 @@ import {
   RecipeDescription,
   RecipeHeader,
   RecipeFooter,
-} from "./MyRecipesItem.styled.js";
+} from './MyRecipesItem.styled.jsx';
 
 const truncateText = (text, maxWords) => {
-  const words = text.split(" ");
+  const words = text.split(' ');
   if (words.length > maxWords) {
-    return words.slice(0, maxWords).join(" ") + "...";
+    return words.slice(0, maxWords).join(' ') + '...';
   }
   return text;
 };

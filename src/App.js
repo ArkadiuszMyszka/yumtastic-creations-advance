@@ -14,14 +14,16 @@ import { Route, Routes } from 'react-router-dom';
 // const CategoriesPage = React.lazy(() => import('pages/Categories'));
 // const FavoritesPage = React.lazy(() => import('pages/Favorites'));
 // const MainPage = React.lazy(() => import('pages/Main'));
-// const MyRecipesPage = React.lazy(() => import('pages/MyRecipes'));
+const MyRecipesPage = React.lazy(
+  () => import('./pages/MyRecipesPage/MyRecipesPage.jsx'),
+);
 // const NotFoundPage = lazy(() => import('pages/NotFoundPage'));
 // const RecipesPage = React.lazy(() => import('pages/Recipe'));
 const RegisterPage = lazy(() => import('./pages/RegisterPage/RegisterPage'));
 // const SearchPage = React.lazy(() => import('pages/Search/Search'));
 // const ShoppingListPage = React.lazy(() => import('pages/ShoppingList'));
 const SigninPage = lazy(() => import('./pages/SigninPage/SigninPage'));
-const WelcomePage = lazy(() => import('./pages/WelcomePage/WelcomePage.jsx'));
+// const WelcomePage = lazy(() => import('./pages/WelcomePage/WelcomePage.jsx'));
 
 const App = () => {
   return (
@@ -31,7 +33,7 @@ const App = () => {
           path="/welcome"
           element={<RestrictedRoute component={<WelcomePage />} />}
         /> */}
-        <Route path="/welcome" element={<WelcomePage />} />
+        <Route path="/my" element={<MyRecipesPage />} />
 
         <Route
           path="/register"

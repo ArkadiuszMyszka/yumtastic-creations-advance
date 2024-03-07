@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from 'react';
+// import { Link } from 'react-router-dom';
 import MainPageTitle from '../../components/MainPageTitle/MainPageTitle.jsx';
 import MyRecipesList from '../../components/MyRecipesList/MyRecipesList.jsx';
 import Paginator from '../../components/Paginator/Paginator.jsx';
-import { OwnerRecipesPage, MyRecipesEmpty } from './MyRecipesPage.styled.jsx';
+import {
+  OwnerRecipesPage,
+  MyRecipesEmpty,
+  StyledLink,
+} from './MyRecipesPage.styled.jsx';
 
 const MyRecipesPage = () => {
   const [recipes, setRecipes] = useState([]);
@@ -43,7 +48,10 @@ const MyRecipesPage = () => {
             alt="Placeholder"
             style={{ maxWidth: "100%", height: "auto" }}
           /> */}
-          <p>No recipes yet. Go to add some recipes!</p>
+          <p>
+            No recipes yet. Go to{' '}
+            <StyledLink to="/add">add some recipes</StyledLink>!
+          </p>
         </MyRecipesEmpty>
       )}
     </OwnerRecipesPage>

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const OwnerRecipesPage = styled.div`
   background-color: ${p => p.theme.colors.whiteColor};
@@ -21,4 +22,10 @@ export const MyRecipesEmpty = styled.div`
   @media screen and (${p => p.theme.media.normal}) {
     font-size: ${p => p.theme.fontSizes.xl};
   }
+`;
+
+export const StyledLink = styled(Link)`
+  color: #8baa36;
+  text-decoration: none;
+  cursor: pointer;
 `;

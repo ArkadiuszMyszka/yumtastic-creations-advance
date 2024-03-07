@@ -11,11 +11,14 @@ const MyRecipesPage = () => {
   const fetchRecipes = async () => {
     try {
       const response = await fetch('../../recipes.json');
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
       const data = await response.json();
       setRecipes(data);
       setTotalRecipesCount(data.length);
     } catch (error) {
-      console.error('Error:', error);
+      console.error('Error fetching recipes:', error);
     }
   };
 

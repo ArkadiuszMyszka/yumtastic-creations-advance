@@ -1,6 +1,6 @@
 import SearchForm from '../../SearchForm/SearchForm.jsx';
-import SearchTypeSelector from '../SearchTypeSelector/SearchTypeSelector.jsx';
 import { SearchBarWrapper } from './SearchBar.styled.jsx';
+import SearchTypeSelector from '../SearchTypeSelector/SearchTypeSelector.jsx';
 
 const SearchBar = () => {
   return (

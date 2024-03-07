@@ -1,8 +1,6 @@
-import { useDispatch } from 'react-redux';
-
-import SelectOption from './SelectOption.jsx';
-
 import { Label, BoxSelector } from './SearchTypeSelector.styled.jsx';
+import SelectOption from './SelectOption.jsx';
+import { useDispatch } from 'react-redux';
 
 export const selectOption = selectedOption => {
   console.log('type selector selectOption');

@@ -1,21 +1,13 @@
-import {
-  useEffect,
-  useLayoutEffect,
-  useState,
-  useCallback,
-  useRef,
-} from 'react';
+import EmptyPage from '../EmptySearchPage/EmptySearchPage.jsx';
+import { getRecipesByTitle } from '../../../redux/search/searchOperations.jsx';
+import { List } from './SearchedRecipesList.styled.jsx';
+import Loader from '../../Loader/Loader.jsx';
+// import Paginator from '../../Paginator/Paginator.jsx';
+import RecipesList from '../RecipesList/RecipesList.jsx';
+import { toast } from 'react-toastify';
+import { useLocation } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
-import { useLocation } from 'react-router';
-import { toast } from 'react-toastify';
-
-import { List } from './SearchedRecipesList.styled.jsx';
-
-import RecipesList from '../RecipesList/RecipesList.jsx';
-import EmptyPage from '../EmptySearchPage/EmptySearchPage.jsx';
-import Loader from '../../Loader/Loader.jsx';
-import Paginator from '../../Paginator/Paginator.jsx';
 
 import {
   selectRecipeByTitle,
@@ -23,15 +15,21 @@ import {
   selectCurrentPage,
   selectIsLoading,
   selectError,
-} from '../../../redux/search/searchSelectors.js';
-
-import { getRecipesByTitle } from '../../../redux/search/searchOperations.js';
+} from '../../../redux/search/searchSelectors.jsx';
 
 import {
+  resetCurrentPage,
   resetRecipeByIngredient,
   setCurrentPage,
-  resetCurrentPage,
-} from '../../../redux/search/searchSlice.js';
+} from '../../../redux/search/searchSlice.jsx';
+
+import {
+  useEffect,
+  useLayoutEffect,
+  useState,
+  useCallback,
+  useRef,
+} from 'react';
 
 export default function SearchedRecipesList() {
   const searchedList = useSelector(selectRecipeByTitle);
@@ -132,24 +130,17 @@ export default function SearchedRecipesList() {
           ) : (
             <EmptyPage>Search for recipe</EmptyPage>
           )}
-          {windowWidth < 1280 && visibleRecipes.length !== 0 && (
-            <Paginator
-              totalItems={visibleRecipes}
-              itemsPerPage={itemsPerPage}
-              onPageChange={handlePageChange}
-            />
-          )}
         </>
       )}
     </>
   );
 }
 
-/* <>
-      {isLoading && !error && <Loader />}
-      {!isLoading && recipes && recipes.length !== 0 ? (
-        <RecipesList recipes={recipes} />
-      ) : (
-        <EmptyPage text="Try looking for something else..." />
-      )}
-    </> */
+////135///
+// {windowWidth < 1280 && visibleRecipes.length !== 0 && (
+//   <Paginator
+//     totalItems={visibleRecipes}
+//     itemsPerPage={itemsPerPage}
+//     onPageChange={handlePageChange}
+//   />
+// )}

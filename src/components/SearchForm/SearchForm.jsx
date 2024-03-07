@@ -1,24 +1,23 @@
+import { Form, SearchFormInput, SearchButton } from './SearchForm.styled.jsx';
 import { useCallback, useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useSearchParams, useNavigate, useLocation } from 'react-router-dom';
-
 import { toast } from 'react-toastify';
-import { Form, SearchFormInput, SearchButton } from './SearchForm.styled.jsx';
-
-import { selectSearchFilter } from '../../redux/search/searchSelectors.js';
 
 import {
   getRecipesByTitle,
   getRecipesByIngredient,
-} from '../../redux/search/searchOperations.js';
+} from '../../redux/search/searchOperations.jsx';
 
 import {
   resetRecipeByTitle,
   resetRecipeByIngredient,
   resetCurrentPage,
-} from '../../redux/search/searchSlice.js';
+} from '../../redux/search/searchSlice.jsx';
 
 import { selectOption } from '../SearchPage/SearchTypeSelector/SearchTypeSelector.jsx';
+
+import { selectSearchFilter } from '../../redux/search/searchSelectors.jsx';
 
 const SearchForm = () => {
   const [searchValue, setSearchValue] = useState('');

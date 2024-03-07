@@ -6,8 +6,8 @@ export const PositionWrapper = styled.div`
 
 export const StyledFormControl = styled.div`
   border: ${p => p.theme.borders.normal} ${p => p.theme.colors.textAreaBg};
-  color: ${p => p.theme.colors.popularRecBorder};
-  background-color: ${p => p.theme.colors.greyColor};
+  color: ${p => p.theme.colors.middleGreyTextColor};
+  background-color: ${p => p.theme.colors.greySelectColor};
   position: relative;
   width: 146px;
   border-radius: 6px;
@@ -35,7 +35,7 @@ export const StyledFormControl = styled.div`
   }
 
   @media screen and (${p => p.theme.media.tablet}) {
-    font-size: ${p => p.theme.fontSizes.s};
+    font-size: ${p => p.theme.fontSizes.m};
     width: 175px;
   }
 
@@ -52,7 +52,7 @@ export const OptionWrapper = styled.div`
 `;
 
 export const StyledSelect = styled.ul`
-  background-color: ${p => p.theme.colors.greyColor};
+  background-color: ${p => p.theme.colors.greySelectColor};
   padding: 4px 0;
   font-size: ${p => p.theme.fontSizes.xs};
   font-weight: ${p => p.theme.media.normal};
@@ -79,7 +79,7 @@ export const StyledSelect = styled.ul`
 `;
 
 export const StyledMenuItem = styled.li`
-  background-color: ${p => p.theme.colors.greyColor};
+  background-color: ${p => p.theme.colors.greySelectColor};
   width: 146px;
   padding: 8px 14px;
   cursor: pointer;
@@ -94,7 +94,7 @@ export const StyledMenuItem = styled.li`
   }
 
   &:hover {
-    color: ${p => p.theme.colors.searchBorderColor};
+    color: ${p => p.theme.colors.middleGreyTextColor};
     background-color: ${p => p.theme.colors.lightBgColor};
     transition: all 0.2s ease-out;
     box-shadow: 0px 0px 4px 1px #f2f2f2b0;

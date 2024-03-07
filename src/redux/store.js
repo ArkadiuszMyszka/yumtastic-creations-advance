@@ -7,7 +7,7 @@ import { ingredientsReducer } from './ingredients/ingredientsSlice.jsx';
 import { myRecipesReducer } from './myRecipes/myRecipesSlice.jsx';
 import { shoppingListReducer } from './shoppingList/shoppingListSlice.jsx';
 import { persistReducer } from 'redux-persist';
-import { searchReducer } from './search/searchSlice.js';
+import { searchReducer } from './search/searchSlice.jsx';
 import storage from 'redux-persist/lib/storage';
 
 import { themeReducer } from './theme/themeSlice.jsx';

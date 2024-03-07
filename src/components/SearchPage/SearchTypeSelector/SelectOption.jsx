@@ -1,8 +1,7 @@
+import { MdArrowDropDown } from 'react-icons/md';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { selectSearchFilter } from '../../../redux/search/searchSelectors.js';
-
-import { MdArrowDropDown } from 'react-icons/md';
+import { selectSearchFilter } from '../../../redux/search/searchSelectors.jsx';
 
 import {
   PositionWrapper,

@@ -1,7 +1,6 @@
-import React, { useState, useLayoutEffect } from 'react';
 import { Link } from 'react-router-dom';
-
 import { Thumb, Label, Image, List, ListItem } from './RecipesList.styled.jsx';
+import React, { useState, useLayoutEffect } from 'react';
 
 const MAX_TITLE_LENGTH = 25;
 

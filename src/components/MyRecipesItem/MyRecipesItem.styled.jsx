@@ -2,17 +2,17 @@ import styled from 'styled-components';
 
 export const RecipeItemContainer = styled.div`
   max-height: 152px;
-  border-radius: 8px;
+  border-radius: ${p => p.theme.radii.normal};
   margin: 18px 16px;
   padding: 14px 9px;
   font-family: Poppins;
-  font-weight: 500;
-  background-color: #ffffff;
+  font-weight: ${p => p.theme.media.medium};
+  background-color: ${p => p.theme.colors.bcgWhiteColor};
   display: grid;
   grid-template-columns: 124px auto;
   gap: 0 14px;
 
-  @media (min-width: 768px) {
+  @media screen and (${p => p.theme.media.tablet}) {
     grid-template-columns: 232px auto;
     gap: 0 24px;
     max-height: 288px;
@@ -20,7 +20,7 @@ export const RecipeItemContainer = styled.div`
     margin: 32px 40px;
   }
 
-  @media (min-width: 1200px) {
+  @media screen and (${p => p.theme.media.normal}) {
     padding: 40px 40px;
     grid-template-columns: 324px auto;
     max-height: 404px;
@@ -31,14 +31,14 @@ export const RecipeItemContainer = styled.div`
 export const BackgroundImage = styled.img`
   width: 124px;
   height: 124px;
-  border-radius: 8px;
+  border-radius: ${p => p.theme.radii.normal};
 
-  @media (min-width: 768px) and (max-width: 1199px) {
+  @media screen and (${p => p.theme.media.tablet}) {
     width: 228px;
     height: 232px;
   }
 
-  @media (min-width: 1200px) {
+  @media screen and (${p => p.theme.media.normal}) {
     width: 318px;
     height: 324px;
   }
@@ -50,11 +50,11 @@ export const RecipeDetails = styled.div`
   flex-direction: column;
   flex: 1;
 
-  @media (min-width: 768px) and (max-width: 1199px) {
+  @media screen and (${p => p.theme.media.tablet}) {
     max-height: 232px;
   }
 
-  @media (min-width: 1200px) {
+  @media screen and (${p => p.theme.media.normal}) {
     max-height: 100%;
   }
 `;
@@ -67,41 +67,41 @@ export const RecipeHeader = styled.div`
 export const RecipeTitle = styled.h3`
   padding-top: 6px;
   margin: 0 10px 0 0;
-  font-size: 14px;
-  color: #3e4462;
+  font-size: ${p => p.theme.fontSizes.s};
+  color: ${p => p.theme.colors.middleGreyTextColor};
   font-family: Poppins;
-  font-weight: 500;
+  font-weight: ${p => p.theme.media.medium};
   line-height: 1em;
 
-  @media (min-width: 768px) and (max-width: 1199px) {
+  @media screen and (${p => p.theme.media.tablet}) {
     padding-top: 0;
-    font-size: 24px;
+    font-size: ${p => p.theme.fontSizes.l};
     line-height: 1.2em;
   }
 
-  @media (min-width: 1200px) {
-    font-size: 24px;
+  @media screen and (${p => p.theme.media.normal}) {
+    font-size: ${p => p.theme.fontSizes.l};
   }
 `;
 
 export const RemoveButton = styled.button`
-  background-color: #8baa36;
+  background-color: ${p => p.theme.colors.greenBgColor};
   width: 24px;
   height: 24px;
   border: none;
-  color: #fff;
+  color: ${p => p.theme.colors.bcgWhiteColor};
   border-radius: 4px;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  @media (min-width: 768px) and (max-width: 1199px) {
+  @media screen and (${p => p.theme.media.tablet}) {
     width: 38px;
     height: 38px;
   }
 
-  @media (min-width: 1200px) {
+  @media screen and (${p => p.theme.media.normal}) {
     width: 44px;
     height: 44px;
   }
@@ -110,12 +110,12 @@ export const RemoveButton = styled.button`
     width: 14px;
     height: 14px;
 
-    @media (min-width: 768px) and (max-width: 1199px) {
+    @media screen and (${p => p.theme.media.tablet}) {
       width: 22px;
       height: 22px;
     }
 
-    @media (min-width: 1200px) {
+    @media screen and (${p => p.theme.media.normal}) {
       width: 24px;
       height: 24px;
     }
@@ -124,19 +124,19 @@ export const RemoveButton = styled.button`
 
 export const RecipeDescription = styled.p`
   margin: 0;
-  font-size: 10px;
-  color: #3e4462;
+  font-size: ${p => p.theme.fontSizes.x};
+  color: ${p => p.theme.colors.middleGreyTextColor};
   font-family: Poppins;
-  font-weight: 400;
+  font-weight: ${p => p.theme.media.normal};
   letter-spacing: 0.02em;
   line-height: 1.2em;
 
   @media screen and (${p => p.theme.media.tablet}) {
-    font-size: 14px;
+    font-size: ${p => p.theme.fontSizes.s};
   }
 
   @media screen and (${p => p.theme.media.normal}) {
-    font-size: 18px;
+    font-size: ${p => p.theme.fontSizes.xm};
   }
 `;
 
@@ -161,7 +161,7 @@ export const SeeRecipeButton = styled.button`
   text-decoration: none;
   font-family: Poppins;
   text-align: center;
-  font-size: 10px;
+  font-size: ${p => p.theme.fontSizes.x};
   border: none;
   align-self: flex-end;
   border-radius: 24px 44px;

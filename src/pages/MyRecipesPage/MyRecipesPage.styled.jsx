@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const OwnerRecipesPage = styled.div`
-  background-color: #fafafa;
+  background-color: ${p => p.theme.colors.whiteColor};
 `;
 
 export const MyRecipesEmpty = styled.div`
@@ -11,7 +11,14 @@ export const MyRecipesEmpty = styled.div`
   gap: 20px;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
-  font-weight: bold;
+  font-size: ${p => p.theme.fontSizes.xm};
+  font-weight: ${p => p.theme.media.semiBold};
   padding: 20px;
+
+  @media screen and (${p => p.theme.media.tablet}) {
+    font-size: ${p => p.theme.fontSizes.l};
+  }
+  @media screen and (${p => p.theme.media.normal}) {
+    font-size: ${p => p.theme.fontSizes.xl};
+  }
 `;

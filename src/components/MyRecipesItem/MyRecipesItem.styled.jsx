@@ -131,11 +131,11 @@ export const RecipeDescription = styled.p`
   letter-spacing: 0.02em;
   line-height: 1.2em;
 
-  @media (min-width: 768px) and (max-width: 1199px) {
+  @media screen and (${p => p.theme.media.tablet}) {
     font-size: 14px;
   }
 
-  @media (min-width: 1200px) {
+  @media screen and (${p => p.theme.media.normal}) {
     font-size: 18px;
   }
 `;
@@ -147,9 +147,9 @@ export const RecipeFooter = styled.div`
 
 export const CookingTime = styled.p`
   margin: 0;
-  font-size: 14px;
+  font-size: ${p => p.theme.fontSizes.s};
   line-height: 1em;
-  color: #3e4462;
+  color: ${p => p.theme.colors.middleGreyTextColor};
   align-self: flex-end;
 `;
 
@@ -157,7 +157,7 @@ export const SeeRecipeButton = styled.button`
   margin: 0;
   height: 27px;
   width: 87px;
-  background-color: #8baa36;
+  background-color: ${p => p.theme.colors.greenBgColor};
   text-decoration: none;
   font-family: Poppins;
   text-align: center;
@@ -167,20 +167,20 @@ export const SeeRecipeButton = styled.button`
   border-radius: 24px 44px;
   cursor: pointer;
 
-  @media (min-width: 768px) and (max-width: 1199px) {
+  @media screen and (${p => p.theme.media.tablet}) {
     width: 138px;
     height: 45px;
-    font-size: 14px;
+    font-size: ${p => p.theme.fontSizes.s};
   }
 
-  @media (min-width: 1200px) {
+  @media screen and (${p => p.theme.media.normal}) {
     width: 172px;
     height: 59px;
-    font-size: 16px;
+    font-size: ${p => p.theme.fontSizes.m};
   }
 
   a {
     text-decoration: none;
-    color: #fff;
+    color: ${p => p.theme.colors.bcgWhiteColor};
   }
 `;

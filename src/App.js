@@ -2,7 +2,8 @@
 // import useAuth from './hooks/useAuth.jsx';
 // import { useDispatch } from 'react-redux';
 // import { lazy, useEffect } from 'react'; // dodac lazy
-// import { SharedLayout } from './components/SharedLayout/SharedLayout.jsx'; // do zmiany jak dojdzie plik
+// import SharedLayout from './components/SharedLayout/SharedLayout.jsx'; // do zmiany jak dojdzie plik
+
 import PrivateRoute from './components/PrivateRoute.jsx';
 import React, { lazy } from 'react';
 import RestrictedRoute from './components/RestrictedRoute.jsx';
@@ -26,6 +27,17 @@ const SigninPage = lazy(() => import('./pages/SigninPage/SigninPage'));
 const WelcomePage = lazy(() => import('./pages/WelcomePage/WelcomePage.jsx'));
 
 const App = () => {
+  // const dispatch = useDispatch();
+
+  // const { isRefreshing } = useAuth();
+
+  // useEffect(() => {
+  //   dispatch(refreshUser());
+  // }, [dispatch]);
+
+  // return isRefreshing ? (
+  //   'refreshing'
+  // ) : (
   return (
     <Routes>
       <>

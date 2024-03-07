@@ -6,8 +6,10 @@ import { favoritesReducer } from './favorites/favoritesSlice.jsx';
 import { ingredientsReducer } from './ingredients/ingredientsSlice.jsx';
 import { myRecipesReducer } from './myRecipes/myRecipesSlice.jsx';
 import { shoppingListReducer } from './shoppingList/shoppingListSlice.jsx';
-import storage from 'redux-persist/lib/storage';
 import { persistReducer } from 'redux-persist';
+import searchReducer from '../redux/search/searchSlice.jsx';
+import storage from 'redux-persist/lib/storage';
+
 import { themeReducer } from './theme/themeSlice.jsx';
 
 const authPersistConfig = {
@@ -29,6 +31,7 @@ const rootReducer = combineReducers({
   my_recipes: myRecipesReducer,
   recipes: recipesReducer,
   shoppingList: shoppingListReducer,
+  search: searchReducer,
   theme: persistReducer(themePersistConfig, themeReducer),
 });
 

@@ -20,6 +20,8 @@ export const selectFavoriteRecipes = state => state.recipes.favorites.recipes;
 
 export const selectLoadingStatus = state => state.isLoading;
 
+export const selectStatuses = state => selectRecipes(state).statuses;
+
 export const selectTotalFavoriteRecipes = state =>
   state.recipes.favorites.total;
 

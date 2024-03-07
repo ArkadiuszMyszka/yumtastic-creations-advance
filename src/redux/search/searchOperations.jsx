@@ -5,7 +5,7 @@ export const getRecipesByTitle = createAsyncThunk(
   'search/getRecipesByTitle',
   async (title, thunkAPI) => {
     try {
-      const response = await privateApi.get(`recipe/search?q=${title}`);
+      const response = await privateApi.get(`/api/recipes/search?q=${title}`);
       console.log('getRecipesByTitle response');
       return response.data;
     } catch (error) {

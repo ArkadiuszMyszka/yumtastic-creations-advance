@@ -20,10 +20,14 @@ const AddRecipesPage = React.lazy(
 const MyRecipesPage = React.lazy(
   () => import('./pages/MyRecipesPage/MyRecipesPage.jsx'),
 );
-// const NotFoundPage = lazy(() => import('pages/NotFoundPage'));
+const NotFoundPage = lazy(
+  () => import('./pages/PageNotFound/PageNotFound.jsx'),
+);
 // const RecipesPage = React.lazy(() => import('pages/Recipe'));
 const RegisterPage = lazy(() => import('./pages/RegisterPage/RegisterPage'));
-const SearchPage = React.lazy(() => import('pages/Search/Search'));
+const SearchPage = React.lazy(
+  () => import('./pages/SearchPage/SearchPage.jsx'),
+);
 // const ShoppingListPage = React.lazy(() => import('pages/ShoppingList'));
 const SigninPage = lazy(() => import('./pages/SigninPage/SigninPage'));
 const WelcomePage = lazy(() => import('./pages/WelcomePage/WelcomePage.jsx'));
@@ -111,10 +115,7 @@ const App = () => {
           />
         }
       />
-      <Route
-        path="*"
-        // element={<NotFoundPage />}
-      />
+      <Route path="*" element={<NotFoundPage />} />
       {/* </Route> */}
     </Routes>
   );

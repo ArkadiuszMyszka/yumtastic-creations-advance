@@ -2,11 +2,11 @@ import App from './App.js';
 import { BrowserRouter } from 'react-router-dom';
 import { theme } from './styles/theme.jsx';
 import { GlobalStyles } from './styles/GlobalStyles.jsx';
+import { Provider } from 'react-redux';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import { ThemeProvider } from 'styled-components';
-import { Provider } from 'react-redux';
 import store from './redux/store.js';
 
 //import './index.css';

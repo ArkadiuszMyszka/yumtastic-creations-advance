@@ -79,10 +79,10 @@ const App = () => {
         path="add"
         element={<PrivateRoute component={<AddRecipesPage />} />}
       />
-      <Route
+      {/* <Route
         path="my"
         element={<PrivateRoute component={<MyRecipesPage />} />}
-      />
+      /> */}
       <Route
         path="favorite"
         element={

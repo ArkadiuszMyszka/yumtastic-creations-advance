@@ -2,30 +2,42 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 // import axios from 'axios';
 import privateApi from '../../services/PrivateApi.js';
 
-export const getCategoriesList = createAsyncThunk(
+export const getCategories = createAsyncThunk(
   'recipes/fetchCategories',
   async (_, thunkAPI) => {
     try {
-      const response = await privateApi.get('/recipes/category/list');
-      return response.data.category;
+      const response = await privateApi.get('/categories');
+      return response.data.categories;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
     }
   },
 );
-export const getRecipesByCategory = createAsyncThunk(
-  'recipes/fetchRecipesBy',
-  async ({ categoryName, page, limit }, thunkAPI) => {
-    try {
-      const response = await privateApi.get(
-        `/recipes/category/${categoryName}?page=${page}&limit=${limit}`,
-      );
-      return response.data[0];
-    } catch (e) {
-      return thunkAPI.rejectWithValue(e.message);
-    }
-  },
-);
+
+// export const getCategoriesList = createAsyncThunk(
+//   'recipes/fetchCategories',
+//   async (_, thunkAPI) => {
+//     try {
+//       const response = await privateApi.get('/recipes/category-list');
+//       return response.data.category;
+//     } catch (e) {
+//       return thunkAPI.rejectWithValue(e.message);
+//     }
+//   },
+// );
+// export const getRecipesByCategory = createAsyncThunk(
+//   'recipes/fetchRecipesBy',
+//   async ({ categoryName, page, limit }, thunkAPI) => {
+//     try {
+//       const response = await privateApi.get(
+//         `/recipes/category/${categoryName}?page=${page}&limit=${limit}`,
+//       );
+//       return response.data[0];
+//     } catch (e) {
+//       return thunkAPI.rejectWithValue(e.message);
+//     }
+//   },
+// );
 
 // Categories pomieszany z search z pliku operations poprzedniego repo
 

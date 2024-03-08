@@ -1,16 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import {
+  addRecipe,
+  deleteRecipe,
   fetchCategoriesList,
   fetchRecipesByCategory,
-  getRecipeById,
-  addToFavorites,
-  removeFromFavorites,
   fetchRecipesMainPage,
-  fetchSearchRecipes,
-  getRecipesPopular,
-  addRecipe,
   fetchAllRecipes,
+  fetchSearchRecipes,
+  getRecipeById,
+  getRecipesPopular,
 } from './recipesOperations.jsx';
 
 import { getFavorite, removeFavorite } from './recipesFavoritesOperations.jsx';
@@ -60,28 +59,15 @@ const recipesSlice = createSlice({
         state.error = action.payload;
       })
 
-      .addCase(addToFavorites.pending, state => {
+      .addCase(deleteRecipe.pending, state => {
         state.isLoading = true;
       })
-      .addCase(addToFavorites.fulfilled, (state, action) => {
+      .addCase(deleteRecipe.fulfilled, (state, action) => {
         state.items.map(item => item.id === action.payload.id);
         state.isLoading = false;
         state.error = null;
       })
-      .addCase(addToFavorites.rejected, (state, action) => {
-        state.isLoading = false;
-        state.error = action.payload;
-      })
-
-      .addCase(removeFromFavorites.pending, state => {
-        state.isLoading = true;
-      })
-      .addCase(removeFromFavorites.fulfilled, (state, action) => {
-        state.items.map(item => item.id === action.payload.id);
-        state.isLoading = false;
-        state.error = null;
-      })
-      .addCase(removeFromFavorites.rejected, (state, action) => {
+      .addCase(deleteRecipe.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
       })
@@ -249,3 +235,15 @@ export const recipesReducer = recipesSlice.reducer;
 // });
 
 // export const recipesReducer = recipesSlice.reducer;
+// .addCase(addToFavorites.pending, state => {
+//   state.isLoading = true;
+// })
+// .addCase(addToFavorites.fulfilled, (state, action) => {
+//   state.items.map(item => item.id === action.payload.id);
+//   state.isLoading = false;
+//   state.error = null;
+// })
+// .addCase(addToFavorites.rejected, (state, action) => {
+//   state.isLoading = false;
+//   state.error = action.payload;
+// })

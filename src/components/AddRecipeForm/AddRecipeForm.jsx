@@ -1,7 +1,7 @@
 import { addRecipe } from '../../redux/recipes/recipesOperations.jsx';
 import blank from '../../images/AddRecipePage/background-for-image-desktop@2x.jpg';
-// import { Camera } from "../AddRecipeForm/AddRecipeForm.styled.jsx";
-//import camera from "../../images/graphics/AddRecipePage/svg/photocamera.svg";
+// import camera from '../../images/AddRecipePage/svg/camera1.svg (1).svg';
+// import { Camera } from './AddRecipeForm.styled.jsx';
 import cookingTime from '../../components/AddRecipeForm/data/cookingTime.json';
 import { fetchCategoriesList } from '../../redux/recipes/recipesOperations.jsx';
 import { selectCategories } from '../../redux/recipes/recipesSelectors.jsx';
@@ -121,7 +121,7 @@ const AddRecipeForm = () => {
   return (
     <AddRecipeContainer>
       <Container>
-        <MainPageTitle />
+        <MainPageTitle title="Add recipe" />
         <AddWrap>
           <Form autoComplete="off" onSubmit={handleSubmit} id="resipeForm">
             <FormImage>
@@ -135,7 +135,7 @@ const AddRecipeForm = () => {
                       maxHeight: '340px',
                     }}
                   />
-                  {/* <Camera width="100px" height="100px">
+                  {/* <Camera width="50px" height="50px">
                     <use href={`${camera}#icon-input_camera`}></use>
                   </Camera> */}
                 </label>

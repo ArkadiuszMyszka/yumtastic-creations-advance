@@ -59,7 +59,7 @@ const App = () => {
         />
       </>
 
-      {/* <Route path="/" element={<SharedLayout />}> */}
+      {/* <Route path="/" element={<SharedLayout />} /> */}
       <Route
         index
         // element={<PrivateRoute component={<MainPage />} />}
@@ -81,11 +81,7 @@ const App = () => {
       />
       <Route
         path="my"
-        element={
-          <PrivateRoute
-          // component={<MyRecipesPage />}
-          />
-        }
+        element={<PrivateRoute component={<MyRecipesPage />} />}
       />
       <Route
         path="favorite"

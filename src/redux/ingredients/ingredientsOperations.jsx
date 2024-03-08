@@ -7,6 +7,7 @@ export const fetchIngredients = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const response = await privateApi.get('/ingredients/list');
+      console.log(response.data);
       return response.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
@@ -16,9 +17,9 @@ export const fetchIngredients = createAsyncThunk(
 
 export const fetchRecipesByIngredient = createAsyncThunk(
   'search/:ingredient',
-  async (query, thunkAPI) => {
+  async (id, thunkAPI) => {
     try {
-      const { data } = await privateApi.get(`/search/ingredient/${query}`);
+      const { data } = await privateApi.get(`/ingredients/${id}`);
       return data.length === 0
         ? data
         : normalizedFetchRecipesByIngredient(data[0].recipeData);

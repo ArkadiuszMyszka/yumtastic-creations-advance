@@ -5,18 +5,18 @@ import privateApi from '../../services/PrivateApi.js';
 axios.defaults.baseURL = 'BASE_BACKEND_URL';
 
 const setAuthHeader = token => {
-  axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+  privateApi.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 
 const clearAuthHeader = token => {
-  axios.defaults.headers.common.Authorization = '';
+  privateApi.defaults.headers.common.Authorization = '';
 };
 
 export const register = createAsyncThunk(
   'auth/register',
   async (credentials, thunkAPI) => {
     try {
-      const user = await privateApi.post('/users/register', credentials);
+      const user = await privateApi.post('/register', credentials);
 
       //   setAuthHeader(user.data.token);
       return user.data;
@@ -31,7 +31,7 @@ export const signIn = createAsyncThunk(
   'auth/signin',
   async (credentials, thunkAPI) => {
     try {
-      const res = await privateApi.post('/users/signin', credentials);
+      const res = await privateApi.post('/signin', credentials);
 
       setAuthHeader(res.data.token);
       return res.data;
@@ -44,7 +44,7 @@ export const signIn = createAsyncThunk(
 
 export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
   try {
-    await privateApi.post('/users/logout');
+    await privateApi.post('/logout');
 
     clearAuthHeader();
   } catch (error) {
@@ -62,7 +62,7 @@ export const refreshUser = createAsyncThunk(
     }
 
     try {
-      const res = await privateApi.get('/users/current');
+      const res = await privateApi.get('/status');
       return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -79,7 +79,7 @@ export const updateProfile = createAsyncThunk(
   'auth/updateProfile',
   async (credentials, thunkAPI) => {
     try {
-      const res = await privateApi.post('/users/update', credentials);
+      const res = await privateApi.post('/patch', credentials);
       return res.data;
     } catch (error) {
       const errorMessage = error.response.data.message;

@@ -10,3 +10,5 @@ export const SigninPage = () => {
         <Link to="/register">Registration</Link>
         </>);
 };
+
+export default SigninPage;

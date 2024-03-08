@@ -192,7 +192,7 @@ export const Subscribe = styled.button`
 }
 
     @media screen and (${(p) => p.theme.media.desktop}) {
-    height: 135px;
+    height: 60px;
     width: 339px;
 }
 `;

@@ -17,7 +17,9 @@ const AddRecipesPage = React.lazy(
 // const CategoriesPage = React.lazy(() => import('pages/Categories'));
 // const FavoritesPage = React.lazy(() => import('pages/Favorites'));
 // const MainPage = React.lazy(() => import('pages/Main'));
-// const MyRecipesPage = React.lazy(() => import('pages/MyRecipes'));
+const MyRecipesPage = React.lazy(
+  () => import('./pages/MyRecipesPage/MyRecipesPage.jsx'),
+);
 // const NotFoundPage = lazy(() => import('pages/NotFoundPage'));
 // const RecipesPage = React.lazy(() => import('pages/Recipe'));
 const RegisterPage = lazy(() => import('./pages/RegisterPage/RegisterPage'));
@@ -57,7 +59,7 @@ const App = () => {
         />
       </>
 
-      {/* <Route path="/" element={<SharedLayout />}> */}
+      {/* <Route path="/" element={<SharedLayout />} /> */}
       <Route
         index
         // element={<PrivateRoute component={<MainPage />} />}
@@ -79,11 +81,7 @@ const App = () => {
       />
       <Route
         path="my"
-        element={
-          <PrivateRoute
-          // component={<MyRecipesPage />}
-          />
-        }
+        element={<PrivateRoute component={<MyRecipesPage />} />}
       />
       <Route
         path="favorite"

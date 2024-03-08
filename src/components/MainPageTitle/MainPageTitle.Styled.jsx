@@ -112,7 +112,7 @@ export const SquareBlack = styled.div`
   @media screen and (${p => p.theme.media.desktop}) {
     width: 13px;
     height: 13px;
-    top: 250px;
+    top: 240px;
     left: 752px;
   }
 `;

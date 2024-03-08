@@ -18,10 +18,12 @@ const AddRecipesPage = lazy(
 // const FavoritesPage = React.lazy(() => import('pages/Favorites'));
 // const MainPage = lazy(() => import('pages/Main'));
 // const MyRecipesPage = lazy(() => import('pages/MyRecipes'));
-// const NotFoundPage = lazy(() => import('pages/NotFoundPage'));
+const PageNotFound = lazy(
+  () => import('./pages/PageNotFound/PageNotFound.jsx'),
+);
 // const RecipesPage = lazy(() => import('pages/Recipe'));
 const RegisterPage = lazy(() => import('./pages/RegisterPage/RegisterPage'));
-// const SearchPage = React.lazy(() => import('pages/Search/Search'));
+const SearchPage = lazy(() => import('./pages/SearchPage/SearchPage.jsx'));
 // const ShoppingListPage = React.lazy(() => import('pages/ShoppingList'));
 const SigninPage = lazy(() => import('./pages/SigninPage/SigninPage'));
 const WelcomePage = lazy(() => import('./pages/WelcomePage/WelcomePage.jsx'));
@@ -101,11 +103,7 @@ const App = () => {
       />
       <Route
         path="search"
-        element={
-          <PrivateRoute
-          // component={<SearchPage />}
-          />
-        }
+        element={<PrivateRoute component={<SearchPage />} />}
       />
       <Route
         path="recipe/:recipeId"
@@ -115,10 +113,7 @@ const App = () => {
           />
         }
       />
-      <Route
-        path="*"
-        // element={<NotFoundPage />}
-      />
+      <Route path="*" element={<PageNotFound />} />
       {/* </Route> */}
       </Routes>
       </Suspense>

@@ -60,7 +60,7 @@ const searchSlice = createSlice({
   },
 });
 
-export default searchSlice.reducer;
+export const searchReducer = searchSlice.reducer;
 export const {
   getNewState,
   resetRecipeByTitle,

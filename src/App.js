@@ -5,23 +5,21 @@
 // import SharedLayout from './components/SharedLayout/SharedLayout.jsx'; // do zmiany jak dojdzie plik
 
 import PrivateRoute from './components/PrivateRoute.jsx';
-import React, { lazy } from 'react';
+import React, { lazy, Suspense } from 'react';
 import RestrictedRoute from './components/RestrictedRoute.jsx';
 import { Route, Routes } from 'react-router-dom';
 
 // do zmiany sciezki na bieżąco jak bedą pojawiac sie pliki
 
-const AddRecipesPage = React.lazy(
+const AddRecipesPage = lazy(
   () => import('./pages/AddRecipePage/AddRecipePage.jsx'),
 );
 // const CategoriesPage = React.lazy(() => import('pages/Categories'));
 // const FavoritesPage = React.lazy(() => import('pages/Favorites'));
-// const MainPage = React.lazy(() => import('pages/Main'));
-const MyRecipesPage = React.lazy(
-  () => import('./pages/MyRecipesPage/MyRecipesPage.jsx'),
-);
+// const MainPage = lazy(() => import('pages/Main'));
+// const MyRecipesPage = lazy(() => import('pages/MyRecipes'));
 // const NotFoundPage = lazy(() => import('pages/NotFoundPage'));
-// const RecipesPage = React.lazy(() => import('pages/Recipe'));
+// const RecipesPage = lazy(() => import('pages/Recipe'));
 const RegisterPage = lazy(() => import('./pages/RegisterPage/RegisterPage'));
 // const SearchPage = React.lazy(() => import('pages/Search/Search'));
 // const ShoppingListPage = React.lazy(() => import('pages/ShoppingList'));
@@ -41,12 +39,14 @@ const App = () => {
   //   'refreshing'
   // ) : (
   return (
+    <Suspense fallback={<div>Loading...</div>}>
     <Routes>
       <>
         {/* <Route
           path="/welcome"
           element={<RestrictedRoute component={<WelcomePage />} />}
         /> */}
+        <Route index element={<WelcomePage />} />
         <Route path="/welcome" element={<WelcomePage />} />
 
         <Route
@@ -79,10 +79,10 @@ const App = () => {
         path="add"
         element={<PrivateRoute component={<AddRecipesPage />} />}
       />
-      <Route
+      {/* <Route
         path="my"
         element={<PrivateRoute component={<MyRecipesPage />} />}
-      />
+      /> */}
       <Route
         path="favorite"
         element={
@@ -120,7 +120,8 @@ const App = () => {
         // element={<NotFoundPage />}
       />
       {/* </Route> */}
-    </Routes>
+      </Routes>
+      </Suspense>
   );
 };
 

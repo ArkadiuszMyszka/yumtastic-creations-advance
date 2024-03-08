@@ -16,11 +16,9 @@ export const fetchShoppingList = createAsyncThunk(
 
 export const addIngredientToShoppingList = createAsyncThunk(
   'shoppingList/addIngredientToShoppingList',
-  async ({ id, measure }, thunkAPI) => {
+  async ({ id }, thunkAPI) => {
     try {
-      const response = await privateApi.post(
-        `/shopping-list/${id}?measure=${measure}`,
-      );
+      const response = await privateApi.post(`/shopping-list/${id}`);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -30,11 +28,9 @@ export const addIngredientToShoppingList = createAsyncThunk(
 
 export const deleteIngredientFromShoppingList = createAsyncThunk(
   'shoppingList/deleteIngredientFromShoppingList',
-  async ({ id, measure }, thunkAPI) => {
+  async ({ id }, thunkAPI) => {
     try {
-      const response = await privateApi.delete(
-        `/shopping-list/${id}?measure=${measure}`,
-      );
+      const response = await privateApi.delete(`/shopping-list/${id}`);
 
       return response.data;
     } catch (error) {

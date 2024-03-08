@@ -5,7 +5,7 @@ export const getRecipesByTitle = createAsyncThunk(
   'search/getRecipesByTitle',
   async (title, thunkAPI) => {
     try {
-      const response = await privateApi.get(`recipe/search?q=${title}`);
+      const response = await privateApi.get(`search?q=${title}`);
       console.log('getRecipesByTitle response');
       return response.data;
     } catch (error) {
@@ -14,20 +14,20 @@ export const getRecipesByTitle = createAsyncThunk(
     }
   },
 );
-
-export const getRecipesByIngredient = createAsyncThunk(
-  'search/getRecipesByIngredient',
-  async (ingredient, thunkAPI) => {
-    try {
-      const response = await privateApi.get(`/ingredients?ing=${ingredient}`);
-      console.log('getRecipesByIngredient response');
-      return response.data;
-    } catch (error) {
-      console.log('getRecipesByIngredient error');
-      return thunkAPI.rejectWithValue(error.message);
-    }
-  },
-);
+/////////////////////////////////////////////////////////////////////
+// export const getRecipesByIngredient = createAsyncThunk(
+//   'search/getRecipesByIngredient',
+//   async (ingredient, thunkAPI) => {
+//     try {
+//       const response = await privateApi.get(`/ingredients?ing=${ingredient}`);
+//       console.log('getRecipesByIngredient response');
+//       return response.data;
+//     } catch (error) {
+//       console.log('getRecipesByIngredient error');
+//       return thunkAPI.rejectWithValue(error.message);
+//     }
+//   },
+// );
 
 ////////////////////////////////////////////////////////////
 // export const getRecipeById = async (recipeId) => {
@@ -71,32 +71,32 @@ export const getRecipesByIngredient = createAsyncThunk(
 //     }
 //   }
 // );
-export const getSearchResultByTitle = createAsyncThunk(
-  'search/getSearchQuery',
-  async ({ type, value, page, limit }, thunkAPI) => {
-    try {
-      const offset = 0;
-      const resp = await privateApi.get(
-        `/api/recipes/search?${type}=${value}&page=${page}&limit=${limit}&offset=${offset}`,
-      );
-      return resp.data;
-    } catch (err) {
-      return thunkAPI.rejectWithValue(err.response.data.message);
-    }
-  },
-);
+// export const getSearchResultByTitle = createAsyncThunk(
+//   'search/getSearchQuery',
+//   async ({ type, value, page, limit }, thunkAPI) => {
+//     try {
+//       const offset = 0;
+//       const resp = await privateApi.get(
+//         `/api/recipes/search?${type}=${value}&page=${page}&limit=${limit}&offset=${offset}`,
+//       );
+//       return resp.data;
+//     } catch (err) {
+//       return thunkAPI.rejectWithValue(err.response.data.message);
+//     }
+//   },
+// );
 
-export const getSearchResultByIngredient = createAsyncThunk(
-  'search/getSearchByIngredient',
-  async ({ type, value, page, limit }, thunkAPI) => {
-    try {
-      const offset = 0;
-      const resp = await privateApi.get(
-        `/api/recipes/search/ingredient?${type}=${value}&page=${page}&limit=${limit}&offset=${offset}`,
-      );
-      return resp.data;
-    } catch (err) {
-      return thunkAPI.rejectWithValue(err.response.data.message);
-    }
-  },
-);
+// export const getSearchResultByIngredient = createAsyncThunk(
+//   'search/getSearchByIngredient',
+//   async ({ type, value, page, limit }, thunkAPI) => {
+//     try {
+//       const offset = 0;
+//       const resp = await privateApi.get(
+//         `/api/recipes/search/ingredient?${type}=${value}&page=${page}&limit=${limit}&offset=${offset}`,
+//       );
+//       return resp.data;
+//     } catch (err) {
+//       return thunkAPI.rejectWithValue(err.response.data.message);
+//     }
+//   },
+// );

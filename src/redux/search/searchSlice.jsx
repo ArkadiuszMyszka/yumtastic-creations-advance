@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import {
   getRecipesByTitle,
-  getRecipesByIngredient,
+  // getRecipesByIngredient,
 } from './searchOperations.jsx';
 
 const handlePending = state => {
@@ -15,7 +15,7 @@ const handleRejected = (state, action) => {
 
 const initialState = {
   recipeByTitle: [],
-  recipesByIngredient: [],
+  // recipesByIngredient: [],
   searchFilter: '',
   currentPage: 1,
   isLoading: false,
@@ -43,9 +43,9 @@ const searchSlice = createSlice({
       state.recipeByTitle = initialState.recipeByTitle;
     },
 
-    resetRecipeByIngredient: state => {
-      state.recipesByIngredient = initialState.recipesByIngredient;
-    },
+    // resetRecipeByIngredient: state => {
+    //   state.recipesByIngredient = initialState.recipesByIngredient;
+    // },
   },
 
   extraReducers: builder => {
@@ -56,14 +56,7 @@ const searchSlice = createSlice({
         state.error = null;
         state.recipeByTitle = action.payload.data.recipe;
       })
-      .addCase(getRecipesByTitle.rejected, handleRejected)
-      .addCase(getRecipesByIngredient.pending, handlePending)
-      .addCase(getRecipesByIngredient.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.error = null;
-        state.recipesByIngredient = action.payload.data.recipe;
-      })
-      .addCase(getRecipesByIngredient.rejected, handleRejected);
+      .addCase(getRecipesByTitle.rejected, handleRejected);
   },
 });
 
@@ -71,7 +64,16 @@ export default searchSlice.reducer;
 export const {
   getNewState,
   resetRecipeByTitle,
-  resetRecipeByIngredient,
+  // resetRecipeByIngredient,
   setCurrentPage,
   resetCurrentPage,
 } = searchSlice.actions;
+
+// addCase(getRecipesByIngredient.pending, handlePending)
+//   .addCase(getRecipesByIngredient.fulfilled, (state, action) => {
+//     state.isLoading = false;
+//     state.error = null;
+//     state.recipesByIngredient = action.payload.data.recipe;
+//   })
+
+//   .addCase(getRecipesByIngredient.rejected, handleRejected);

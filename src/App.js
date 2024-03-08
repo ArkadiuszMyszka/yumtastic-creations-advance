@@ -9,9 +9,6 @@ import React, { lazy } from 'react';
 import RestrictedRoute from './components/RestrictedRoute.jsx';
 import { Route, Routes } from 'react-router-dom';
 
-// ***** = import SearchPage bez lazy 13 linijka: 29 linijka
-import { SearchPage } from './pages/SearchPage/SearchPage.jsx';
-
 // do zmiany sciezki na bieżąco jak bedą pojawiac sie pliki
 
 const AddRecipesPage = React.lazy(
